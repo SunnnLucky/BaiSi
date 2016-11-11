@@ -22,6 +22,7 @@
 		7115CF921DD4975300891093 /* UIImage+image.m in Sources */ = {isa = PBXBuildFile; fileRef = 7115CF911DD4975300891093 /* UIImage+image.m */; };
 		712833521DD3340A001332F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 712833511DD3340A001332F9 /* Assets.xcassets */; };
 		712833551DD3340A001332F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 712833531DD3340A001332F9 /* LaunchScreen.storyboard */; };
+		719A58731DD5CBB900E1588D /* SLBSTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 719A58721DD5CBB900E1588D /* SLBSTabBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,9 @@
 		712833511DD3340A001332F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		712833541DD3340A001332F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		712833561DD3340A001332F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		719A58711DD5CBB900E1588D /* SLBSTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLBSTabBar.h; path = BaiSi/Classes/Other/Category/SLBSTabBar.h; sourceTree = SOURCE_ROOT; };
+		719A58721DD5CBB900E1588D /* SLBSTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLBSTabBar.m; path = BaiSi/Classes/Other/Category/SLBSTabBar.m; sourceTree = SOURCE_ROOT; };
+		719A58741DD5CD3E00E1588D /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		9CD6F6789163AC61618F5367 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B22ABE9BBAC81EF213A94D20 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -231,6 +235,7 @@
 				7115CF5C1DD41D6E00891093 /* AppDelegate.h */,
 				7115CF5D1DD41D6E00891093 /* AppDelegate.m */,
 				7115CF5E1DD41D6E00891093 /* main.m */,
+				719A58741DD5CD3E00E1588D /* PrefixHeader.pch */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -303,6 +308,8 @@
 		7115CF681DD41EC500891093 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				719A58711DD5CBB900E1588D /* SLBSTabBar.h */,
+				719A58721DD5CBB900E1588D /* SLBSTabBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -488,6 +495,7 @@
 				7115CF831DD4209600891093 /* SLBSMeTVC.m in Sources */,
 				7115CF711DD4200C00891093 /* SLBSBaseTVC.m in Sources */,
 				7115CF801DD4208500891093 /* SLBSFriendTrendVC.m in Sources */,
+				719A58731DD5CBB900E1588D /* SLBSTabBar.m in Sources */,
 				7115CF7A1DD4205100891093 /* SLBSNewVC.m in Sources */,
 				7115CF921DD4975300891093 /* UIImage+image.m in Sources */,
 				7115CF641DD41D6E00891093 /* main.m in Sources */,
@@ -608,6 +616,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 5F6HLQ5LBV;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/BaiSi/Classes/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = BaiSi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Suns.BaiSi;
@@ -622,6 +632,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 5F6HLQ5LBV;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/BaiSi/Classes/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = BaiSi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Suns.BaiSi;

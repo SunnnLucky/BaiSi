@@ -15,6 +15,7 @@
 #import "SLBSMeTVC.h"
 
 #import "UIImage+image.h"
+#import "SLBSTabBar.h"
 
 @interface SLBSBaseTabBarC ()
 
@@ -22,9 +23,15 @@
 
 @implementation SLBSBaseTabBarC
 
+#warning 自定义tabbar
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self setUpChildVC];
+    [self setupAllTitleButton];
+    
+    [self setUpTabBar];
 }
 
 //只会调用一次
@@ -43,8 +50,6 @@
     [[UITabBarItem appearanceWhenContainedInInstancesOfClasses:@[self]] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:81/255.0 green:81/255.0 blue:81/255.0 alpha:1]} forState:UIControlStateSelected];
     //注意:设置字体大小，只有普通状态下有效
     [[UITabBarItem appearanceWhenContainedInInstancesOfClasses:@[self]] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12]} forState:UIControlStateNormal];
-    
-    
 }
 
 //可能调用多次
@@ -52,45 +57,76 @@
 //    if(self == [SLBSBaseTabBarC class]){}
 //}
 
+-(void)setUpTabBar{
+    SLBSTabBar * tab = [[SLBSTabBar alloc] init];
+    [self setValue:tab forKey:@"tabBar"];
+    SLog(@"%@",self.tabBar);
+}
+
 //创建子控制器
 -(void)setUpChildVC{
     //精华
     SLBSEssenceVC * essence = [[SLBSEssenceVC alloc] init];
-    
-    [self addChildVCWithVC:essence andNavName:@"百思不得姐" andTabbarName:@"精华" andImage:@"tabBar_essence_click_icon"];
+    [self addChildViewController:[self navWithVC:essence]];
+
     //最新
     SLBSNewVC * new = [[SLBSNewVC alloc] init];
-    [self addChildVCWithVC:new andNavName:@"百思不得姐" andTabbarName:@"最新" andImage:@"tabBar_new_click_icon"];
+    [self addChildViewController:[self navWithVC:new]];
+
     //发布
-    SLBSPublishVC * publish = [[SLBSPublishVC alloc] init];
-    [self addChildVCWithVC:publish andNavName:@"百思不得姐" andTabbarName:@"发布" andImage:@"tabBar_publish_click_icon"];
+//    SLBSPublishVC * publish = [[SLBSPublishVC alloc] init];
+//    [self addChildVCWithVC:publish andNavName:@"百思不得姐" andTabbarName:@"发布" andImage:@"tabBar_publish_click_icon"];
+    
     //关注
     SLBSFriendTrendVC * friend = [[SLBSFriendTrendVC alloc] init];
-    [self addChildVCWithVC:friend andNavName:@"关注" andTabbarName:@"关注" andImage:@"tabBar_friendTrends_click_icon"];
+    [self addChildViewController:[self navWithVC:friend]];
+
     //我
     SLBSMeTVC * me = [[SLBSMeTVC alloc] init];
-    [self addChildVCWithVC:me andNavName:@"我的" andTabbarName:@"我的" andImage:@"tabBar_me_click_icon"];
+    [self addChildViewController:[self navWithVC:me]];
 }
 
 //Nav包裹子控制器
--(void)addChildVCWithVC:(UIViewController *)vc andNavName:(NSString*)navName andTabbarName:(NSString*)tabName andImage:(NSString *)image{
-    
-    NSLog(@"%@",[image stringByReplacingOccurrencesOfString:@"click_" withString:@""]);
-    //如果是发布特殊处理
-    if ([vc isKindOfClass:[SLBSPublishVC class]]) {
-        [self addChildViewController:vc];
-        vc.tabBarItem.image = [UIImage imageOriginalWithName:[image stringByReplacingOccurrencesOfString:@"click_" withString:@""]];
-        vc.tabBarItem.selectedImage = [UIImage imageOriginalWithName:image];
-        // 设置图片位置
-        vc.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6 , 0);
-        return;
-    }
+-(SLBSBaseNavC *)navWithVC:(UIViewController *)vc{
     SLBSBaseNavC * nav = [[SLBSBaseNavC alloc] initWithRootViewController:(vc)];
-    nav.topViewController.title = navName;
-    nav.tabBarItem.title = tabName;
-    //操作字符串
-    nav.tabBarItem.image = [UIImage imageOriginalWithName:[image stringByReplacingOccurrencesOfString:@"click_" withString:@""]];
-    nav.tabBarItem.selectedImage = [UIImage imageOriginalWithName:image];
-    [self addChildViewController:nav];
+    return nav;
+}
+
+// 设置tabBar上所有按钮内容
+- (void)setupAllTitleButton{
+    //图片名称
+    NSString * imgName = @"tabBar_essence_click_icon";
+    
+    //精华
+    SLBSBaseNavC * nav = self.childViewControllers[0];
+    nav.topViewController.title = @"百思不得姐";
+    nav.tabBarItem.title = @"精华";
+    nav.tabBarItem.image = [UIImage imageOriginalWithName:[imgName stringByReplacingOccurrencesOfString:@"click_" withString:@""]];
+    nav.tabBarItem.selectedImage = [UIImage imageOriginalWithName:imgName];
+    
+    //最新
+    imgName = @"tabBar_new_click_icon";
+    SLBSBaseNavC * nav1 = self.childViewControllers[1];
+    nav1.topViewController.title = @"百思不得姐";
+    nav1.tabBarItem.title = @"最新";
+    nav1.tabBarItem.image = [UIImage imageOriginalWithName:[imgName stringByReplacingOccurrencesOfString:@"click_" withString:@""]];
+    nav1.tabBarItem.selectedImage = [UIImage imageOriginalWithName:imgName];
+    
+    //关注
+    imgName = @"tabBar_friendTrends_click_icon";
+    SLBSBaseNavC * nav2 = self.childViewControllers[2];
+    nav2.topViewController.title = @"关注";
+    nav2.tabBarItem.title = @"关注";
+    nav2.tabBarItem.image = [UIImage imageOriginalWithName:[imgName stringByReplacingOccurrencesOfString:@"click_" withString:@""]];
+    nav2.tabBarItem.selectedImage = [UIImage imageOriginalWithName:imgName];
+    
+    //我
+    imgName = @"tabBar_me_click_icon";
+    SLBSBaseNavC * nav3 = self.childViewControllers[3];
+    nav3.topViewController.title = @"我的";
+    nav3.tabBarItem.title = @"我的";
+    nav3.tabBarItem.image = [UIImage imageOriginalWithName:[imgName stringByReplacingOccurrencesOfString:@"click_" withString:@""]];
+    nav3.tabBarItem.selectedImage = [UIImage imageOriginalWithName:imgName];
+
 }
 @end
