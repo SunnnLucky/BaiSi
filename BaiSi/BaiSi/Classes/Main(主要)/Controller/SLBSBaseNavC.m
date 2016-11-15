@@ -8,7 +8,7 @@
 
 #import "SLBSBaseNavC.h"
 
-@interface SLBSBaseNavC ()
+@interface SLBSBaseNavC ()<UIGestureRecognizerDelegate>
 
 @end
 
@@ -16,22 +16,49 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    //全屏滑动
+    /*
+     action=handleNavigationTransition:,
+     target=<_UINavigationInteractiveTransition 0x7fcb3350d4c0>)>>  与代理是同一个类
+     */
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self.interactivePopGestureRecognizer.delegate action:@selector(handleNavigationTransition:)];
+    //控制手势什么时候触发
+    pan.delegate = self;
+    [self.view addGestureRecognizer:pan];
+    
+    //取消系统默认代理
+    self.interactivePopGestureRecognizer.enabled = NO;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+//只加载一次
++(void)load
+{
+    UINavigationBar *navBar = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[self]];
+    [navBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:20]}];
+    [navBar setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    //滑动手势代理
+//    NSLog(@"%@",self.interactivePopGestureRecognizer);
+    if (self.childViewControllers.count > 0) {
+        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem creatBackItem:[UIImage imageNamed:@"navigationButtonReturn"] andHighImage:[UIImage imageNamed:@"navigationButtonReturnClick"] addTarget:self action:@selector(back) title:@"返回"];
+        viewController.hidesBottomBarWhenPushed = YES;
+    }
+    [super pushViewController:viewController animated:animated];
 }
-*/
+
+-(void)back
+{
+    [self popViewControllerAnimated:YES];
+}
+
+#pragma mark -UIGestureRecognizerDelegate
+// 决定是否触发手势
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    return self.childViewControllers.count > 1;
+}
 
 @end

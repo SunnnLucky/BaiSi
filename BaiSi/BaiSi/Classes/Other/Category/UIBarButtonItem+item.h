@@ -12,6 +12,8 @@
 
 +(UIBarButtonItem *)creatItemWithImage:(UIImage *)image andHighImage:(UIImage *)high addTarget:(id)target action:(SEL)action;
 
++(UIBarButtonItem *)creatBackItem:(UIImage *)image andHighImage:(UIImage *)high addTarget:(id)target action:(SEL)action title:(NSString *)title;
+
 +(UIBarButtonItem *)creatItemWithImage:(UIImage *)image andSelImage:(UIImage *)sel addTarget:(id)target action:(SEL)action;
 
 @end

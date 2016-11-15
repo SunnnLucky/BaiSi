@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "SLBSBaseTabBarC.h"
+#import "SLBSAdVC.h"
 
 @interface AppDelegate ()
 
@@ -20,10 +20,8 @@
     //1.创建窗口
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     //2.设置窗口根控制器
-    SLBSBaseTabBarC * tabbarVc = [[SLBSBaseTabBarC alloc] init];
-    self.window.rootViewController = tabbarVc;
-    //2.1添加子控制器（5个子控制器）  --->  自定义
-    
+    SLBSAdVC * advc = [[SLBSAdVC alloc] init];
+    self.window.rootViewController = advc;
     //3.显示窗口 1.称为UIApplication主窗口 2.添加tabbarVc到窗口
     [self.window makeKeyAndVisible];
     

@@ -7,6 +7,7 @@
 //
 
 #import "SLBSMeTVC.h"
+#import "SLBSSettingTVC.h"
 
 @interface SLBSMeTVC ()
 
@@ -32,13 +33,11 @@
 }
 
 //setting按钮点击
--(void)setting{
-    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"setting按钮点击了" message:nil preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消"style:UIAlertActionStyleCancel handler:nil];
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的"style:UIAlertActionStyleDefault handler:nil];
-    [alert addAction:cancelAction];
-    [alert addAction:okAction];
-    [self presentViewController:alert animated:YES completion:nil];
+-(void)setting
+{
+    SLBSSettingTVC * setting = [[SLBSSettingTVC alloc] init];
+//    setting.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:setting animated:YES];
 }
 
 //moon按钮点击
