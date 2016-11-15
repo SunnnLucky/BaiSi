@@ -33,10 +33,10 @@
     [super layoutSubviews];
     
     NSUInteger count = self.items.count + 1;
-    CGFloat btnW = self.bounds.size.width / count;
-    CGFloat btnH = self.bounds.size.height;
+    CGFloat btnW = self.sl_width / count;
+    CGFloat btnH = self.sl_height;
     int i = 0;
-    SLog(@"%@",self.subviews);
+//    SLog(@"%@",self.subviews);
     
     for (UIView * btn in self.subviews) {
         if ([btn isKindOfClass:NSClassFromString(@"UITabBarButton")]){
@@ -48,7 +48,7 @@
         }
     }
     
-    self.plusBtn.center = CGPointMake(self.bounds.size.width * 0.5, self.bounds.size.height * 0.5);
+    self.plusBtn.center = CGPointMake(self.sl_width * 0.5, self.sl_height * 0.5);
 //    SLog(@"%@",self.plusBtn);
 }
 

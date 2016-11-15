@@ -23,7 +23,6 @@
 
 @implementation SLBSBaseTabBarC
 
-#warning 自定义tabbar
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -60,7 +59,7 @@
 -(void)setUpTabBar{
     SLBSTabBar * tab = [[SLBSTabBar alloc] init];
     [self setValue:tab forKey:@"tabBar"];
-    SLog(@"%@",self.tabBar);
+//    SLog(@"%@",self.tabBar);
 }
 
 //创建子控制器
@@ -99,7 +98,7 @@
     
     //精华
     SLBSBaseNavC * nav = self.childViewControllers[0];
-    nav.topViewController.title = @"百思不得姐";
+    //nav.topViewController.title = @"百思不得姐";
     nav.tabBarItem.title = @"精华";
     nav.tabBarItem.image = [UIImage imageOriginalWithName:[imgName stringByReplacingOccurrencesOfString:@"click_" withString:@""]];
     nav.tabBarItem.selectedImage = [UIImage imageOriginalWithName:imgName];

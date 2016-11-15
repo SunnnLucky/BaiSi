@@ -16,13 +16,15 @@
 		7115CF7A1DD4205100891093 /* SLBSNewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7115CF791DD4205100891093 /* SLBSNewVC.m */; };
 		7115CF7D1DD4206900891093 /* SLBSPublishVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7115CF7C1DD4206900891093 /* SLBSPublishVC.m */; };
 		7115CF801DD4208500891093 /* SLBSFriendTrendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7115CF7F1DD4208500891093 /* SLBSFriendTrendVC.m */; };
-		7115CF831DD4209600891093 /* SLBSMeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7115CF821DD4209600891093 /* SLBSMeTVC.m */; };
 		7115CF861DD4223000891093 /* SLBSBaseTabBarC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7115CF851DD4223000891093 /* SLBSBaseTabBarC.m */; };
 		7115CF8C1DD422CB00891093 /* SLBSBaseNavC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7115CF8B1DD422CB00891093 /* SLBSBaseNavC.m */; };
 		7115CF921DD4975300891093 /* UIImage+image.m in Sources */ = {isa = PBXBuildFile; fileRef = 7115CF911DD4975300891093 /* UIImage+image.m */; };
 		712833521DD3340A001332F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 712833511DD3340A001332F9 /* Assets.xcassets */; };
 		712833551DD3340A001332F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 712833531DD3340A001332F9 /* LaunchScreen.storyboard */; };
-		719A58731DD5CBB900E1588D /* SLBSTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 719A58721DD5CBB900E1588D /* SLBSTabBar.m */; };
+		7191114D1DDAA8E000616C1F /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7191114C1DDAA8E000616C1F /* UIView+Extension.m */; };
+		719111501DDAB7BC00616C1F /* UIBarButtonItem+item.m in Sources */ = {isa = PBXBuildFile; fileRef = 7191114F1DDAB7BC00616C1F /* UIBarButtonItem+item.m */; };
+		719111541DDAC0C900616C1F /* SLBSMeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 719111531DDAC0C900616C1F /* SLBSMeTVC.m */; };
+		7191116A1DDAC1F300616C1F /* SLBSTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 719111691DDAC1F300616C1F /* SLBSTabBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,8 +44,6 @@
 		7115CF7C1DD4206900891093 /* SLBSPublishVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSPublishVC.m; sourceTree = "<group>"; };
 		7115CF7E1DD4208500891093 /* SLBSFriendTrendVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSFriendTrendVC.h; sourceTree = "<group>"; };
 		7115CF7F1DD4208500891093 /* SLBSFriendTrendVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSFriendTrendVC.m; sourceTree = "<group>"; };
-		7115CF811DD4209600891093 /* SLBSMeTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLBSMeTVC.h; path = ../SLBSMeTVC.h; sourceTree = "<group>"; };
-		7115CF821DD4209600891093 /* SLBSMeTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLBSMeTVC.m; path = ../SLBSMeTVC.m; sourceTree = "<group>"; };
 		7115CF841DD4223000891093 /* SLBSBaseTabBarC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSBaseTabBarC.h; sourceTree = "<group>"; };
 		7115CF851DD4223000891093 /* SLBSBaseTabBarC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSBaseTabBarC.m; sourceTree = "<group>"; };
 		7115CF8A1DD422CB00891093 /* SLBSBaseNavC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSBaseNavC.h; sourceTree = "<group>"; };
@@ -54,8 +54,14 @@
 		712833511DD3340A001332F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		712833541DD3340A001332F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		712833561DD3340A001332F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		719A58711DD5CBB900E1588D /* SLBSTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLBSTabBar.h; path = BaiSi/Classes/Other/Category/SLBSTabBar.h; sourceTree = SOURCE_ROOT; };
-		719A58721DD5CBB900E1588D /* SLBSTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLBSTabBar.m; path = BaiSi/Classes/Other/Category/SLBSTabBar.m; sourceTree = SOURCE_ROOT; };
+		7191114B1DDAA8E000616C1F /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		7191114C1DDAA8E000616C1F /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		7191114E1DDAB7BC00616C1F /* UIBarButtonItem+item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+item.h"; sourceTree = "<group>"; };
+		7191114F1DDAB7BC00616C1F /* UIBarButtonItem+item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+item.m"; sourceTree = "<group>"; };
+		719111521DDAC0C900616C1F /* SLBSMeTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSMeTVC.h; sourceTree = "<group>"; };
+		719111531DDAC0C900616C1F /* SLBSMeTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSMeTVC.m; sourceTree = "<group>"; };
+		719111681DDAC1F300616C1F /* SLBSTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSTabBar.h; sourceTree = "<group>"; };
+		719111691DDAC1F300616C1F /* SLBSTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSTabBar.m; sourceTree = "<group>"; };
 		719A58741DD5CD3E00E1588D /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		9CD6F6789163AC61618F5367 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B22ABE9BBAC81EF213A94D20 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,8 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				7115CF4C1DD41D6E00891093 /* Controller */,
-				7115CF4D1DD41D6E00891093 /* Model */,
-				7115CF4E1DD41D6E00891093 /* View */,
+				7191115D1DDAC15B00616C1F /* Model */,
+				7191115E1DDAC15B00616C1F /* View */,
 			);
 			path = "Essence(精华)";
 			sourceTree = "<group>";
@@ -115,26 +121,12 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		7115CF4D1DD41D6E00891093 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		7115CF4E1DD41D6E00891093 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		7115CF4F1DD41D6E00891093 /* FriendTrend(关注) */ = {
 			isa = PBXGroup;
 			children = (
 				7115CF501DD41D6E00891093 /* Controller */,
-				7115CF511DD41D6E00891093 /* Model */,
-				7115CF521DD41D6E00891093 /* View */,
+				719111631DDAC18B00616C1F /* Model */,
+				719111641DDAC18B00616C1F /* View */,
 			);
 			path = "FriendTrend(关注)";
 			sourceTree = "<group>";
@@ -148,59 +140,22 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		7115CF511DD41D6E00891093 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		7115CF521DD41D6E00891093 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		7115CF531DD41D6E00891093 /* Me(我) */ = {
 			isa = PBXGroup;
 			children = (
-				7115CF541DD41D6E00891093 /* Controller */,
-				7115CF551DD41D6E00891093 /* Model */,
-				7115CF561DD41D6E00891093 /* View */,
+				719111511DDAC0C900616C1F /* Controller */,
+				719111651DDAC19900616C1F /* Model */,
+				719111661DDAC19900616C1F /* View */,
 			);
 			path = "Me(我)";
-			sourceTree = "<group>";
-		};
-		7115CF541DD41D6E00891093 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				7115CF811DD4209600891093 /* SLBSMeTVC.h */,
-				7115CF821DD4209600891093 /* SLBSMeTVC.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		7115CF551DD41D6E00891093 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		7115CF561DD41D6E00891093 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		7115CF571DD41D6E00891093 /* New(新帖) */ = {
 			isa = PBXGroup;
 			children = (
 				7115CF581DD41D6E00891093 /* Controller */,
-				7115CF591DD41D6E00891093 /* Model */,
-				7115CF5A1DD41D6E00891093 /* View */,
+				7191115F1DDAC16A00616C1F /* Model */,
+				719111601DDAC16A00616C1F /* View */,
 			);
 			path = "New(新帖)";
 			sourceTree = "<group>";
@@ -212,20 +167,6 @@
 				7115CF791DD4205100891093 /* SLBSNewVC.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		7115CF591DD41D6E00891093 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		7115CF5A1DD41D6E00891093 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		7115CF5B1DD41D6E00891093 /* Other */ = {
@@ -244,8 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				7115CF601DD41D6E00891093 /* Controller */,
-				7115CF611DD41D6E00891093 /* Model */,
-				7115CF621DD41D6E00891093 /* View */,
+				719111611DDAC17C00616C1F /* Model */,
+				719111621DDAC17C00616C1F /* View */,
 			);
 			path = "Publish(发布)";
 			sourceTree = "<group>";
@@ -259,26 +200,12 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		7115CF611DD41D6E00891093 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		7115CF621DD41D6E00891093 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		7115CF651DD41EC500891093 /* Main(主要) */ = {
 			isa = PBXGroup;
 			children = (
 				7115CF661DD41EC500891093 /* Controller */,
-				7115CF671DD41EC500891093 /* Model */,
-				7115CF681DD41EC500891093 /* View */,
+				7191115B1DDAC13C00616C1F /* Model */,
+				719111671DDAC1F300616C1F /* View */,
 			);
 			path = "Main(主要)";
 			sourceTree = "<group>";
@@ -298,27 +225,15 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		7115CF671DD41EC500891093 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		7115CF681DD41EC500891093 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				719A58711DD5CBB900E1588D /* SLBSTabBar.h */,
-				719A58721DD5CBB900E1588D /* SLBSTabBar.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		7115CF8F1DD4972700891093 /* Category */ = {
 			isa = PBXGroup;
 			children = (
 				7115CF901DD4975300891093 /* UIImage+image.h */,
 				7115CF911DD4975300891093 /* UIImage+image.m */,
+				7191114B1DDAA8E000616C1F /* UIView+Extension.h */,
+				7191114C1DDAA8E000616C1F /* UIView+Extension.m */,
+				7191114E1DDAB7BC00616C1F /* UIBarButtonItem+item.h */,
+				7191114F1DDAB7BC00616C1F /* UIBarButtonItem+item.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -358,6 +273,101 @@
 			children = (
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		719111511DDAC0C900616C1F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				719111521DDAC0C900616C1F /* SLBSMeTVC.h */,
+				719111531DDAC0C900616C1F /* SLBSMeTVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7191115B1DDAC13C00616C1F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7191115D1DDAC15B00616C1F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7191115E1DDAC15B00616C1F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7191115F1DDAC16A00616C1F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		719111601DDAC16A00616C1F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		719111611DDAC17C00616C1F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		719111621DDAC17C00616C1F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		719111631DDAC18B00616C1F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		719111641DDAC18B00616C1F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		719111651DDAC19900616C1F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		719111661DDAC19900616C1F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		719111671DDAC1F300616C1F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				719111681DDAC1F300616C1F /* SLBSTabBar.h */,
+				719111691DDAC1F300616C1F /* SLBSTabBar.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		DC0A58F23F0F167AD4D6C852 /* Frameworks */ = {
@@ -492,17 +502,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				7115CF741DD4202000891093 /* SLBSBaseVC.m in Sources */,
-				7115CF831DD4209600891093 /* SLBSMeTVC.m in Sources */,
 				7115CF711DD4200C00891093 /* SLBSBaseTVC.m in Sources */,
+				7191116A1DDAC1F300616C1F /* SLBSTabBar.m in Sources */,
 				7115CF801DD4208500891093 /* SLBSFriendTrendVC.m in Sources */,
-				719A58731DD5CBB900E1588D /* SLBSTabBar.m in Sources */,
 				7115CF7A1DD4205100891093 /* SLBSNewVC.m in Sources */,
 				7115CF921DD4975300891093 /* UIImage+image.m in Sources */,
+				719111541DDAC0C900616C1F /* SLBSMeTVC.m in Sources */,
 				7115CF641DD41D6E00891093 /* main.m in Sources */,
 				7115CF8C1DD422CB00891093 /* SLBSBaseNavC.m in Sources */,
 				7115CF861DD4223000891093 /* SLBSBaseTabBarC.m in Sources */,
+				7191114D1DDAA8E000616C1F /* UIView+Extension.m in Sources */,
 				7115CF771DD4203B00891093 /* SLBSEssenceVC.m in Sources */,
 				7115CF631DD41D6E00891093 /* AppDelegate.m in Sources */,
+				719111501DDAB7BC00616C1F /* UIBarButtonItem+item.m in Sources */,
 				7115CF7D1DD4206900891093 /* SLBSPublishVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
