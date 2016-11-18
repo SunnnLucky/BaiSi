@@ -7,6 +7,8 @@
 //
 
 #import "SLBSNewVC.h"
+#import "SLBSSubTagTVC.h"
+#import "SLBSSubTagCell.h"
 
 @interface SLBSNewVC ()
 
@@ -29,14 +31,11 @@
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MainTitle"]];
 }
 
-//MainTagSubIcon按钮点击
+#pragma mark - 订阅按钮点击
 -(void)MainTagSubIcon{
-    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"MainTagSubIcon按钮点击了" message:nil preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消"style:UIAlertActionStyleCancel handler:nil];
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的"style:UIAlertActionStyleDefault handler:nil];
-    [alert addAction:cancelAction];
-    [alert addAction:okAction];
-    [self presentViewController:alert animated:YES completion:nil];
+    SLBSSubTagTVC * subTag = [[SLBSSubTagTVC alloc] init];
+    subTag.title = @"推荐标签";
+    [self.navigationController pushViewController:subTag animated:YES];
 }
 
 @end

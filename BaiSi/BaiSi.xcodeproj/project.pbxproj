@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		314B4D6736CE4778AB7D91BB /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD6F6789163AC61618F5367 /* Pods.framework */; };
+		710799661DDDE7270083ABBF /* SLBSSubTagTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 710799651DDDE7270083ABBF /* SLBSSubTagTVC.m */; };
 		7115CF631DD41D6E00891093 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7115CF5D1DD41D6E00891093 /* AppDelegate.m */; };
 		7115CF641DD41D6E00891093 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7115CF5E1DD41D6E00891093 /* main.m */; };
 		7115CF711DD4200C00891093 /* SLBSBaseTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7115CF701DD4200C00891093 /* SLBSBaseTVC.m */; };
@@ -21,7 +22,10 @@
 		7115CF921DD4975300891093 /* UIImage+image.m in Sources */ = {isa = PBXBuildFile; fileRef = 7115CF911DD4975300891093 /* UIImage+image.m */; };
 		712833521DD3340A001332F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 712833511DD3340A001332F9 /* Assets.xcassets */; };
 		712833551DD3340A001332F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 712833531DD3340A001332F9 /* LaunchScreen.storyboard */; };
-		713019FF1DDB4C0200E9E10E /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 713019FE1DDB4C0200E9E10E /* NSArray+Log.m */; };
+		71301A021DDC2E5200E9E10E /* SLBSAdItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 71301A011DDC2E5200E9E10E /* SLBSAdItem.m */; };
+		715919861DDEB33D0092F0EC /* SLBSSubTagItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 715919851DDEB33D0092F0EC /* SLBSSubTagItem.m */; };
+		7159198F1DDEB9770092F0EC /* SLBSSubTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7159198D1DDEB9770092F0EC /* SLBSSubTagCell.m */; };
+		715919901DDEB9770092F0EC /* SLBSSubTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7159198E1DDEB9770092F0EC /* SLBSSubTagCell.xib */; };
 		7160DEA81DDAE2CA00413E11 /* SLBSSettingTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7160DEA71DDAE2CA00413E11 /* SLBSSettingTVC.m */; };
 		7160DEAF1DDB23E100413E11 /* SLBSAdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7160DEAE1DDB23E100413E11 /* SLBSAdVC.m */; };
 		7160DEB31DDB277A00413E11 /* SLBSAdVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7160DEB21DDB277A00413E11 /* SLBSAdVC.xib */; };
@@ -40,6 +44,8 @@
 
 /* Begin PBXFileReference section */
 		4731205CE392B47B47282A69 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		710799641DDDE7270083ABBF /* SLBSSubTagTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSSubTagTVC.h; sourceTree = "<group>"; };
+		710799651DDDE7270083ABBF /* SLBSSubTagTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSSubTagTVC.m; sourceTree = "<group>"; };
 		7115CF5C1DD41D6E00891093 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7115CF5D1DD41D6E00891093 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7115CF5E1DD41D6E00891093 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -65,8 +71,13 @@
 		712833511DD3340A001332F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		712833541DD3340A001332F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		712833561DD3340A001332F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		713019FD1DDB4C0200E9E10E /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
-		713019FE1DDB4C0200E9E10E /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
+		71301A001DDC2E5200E9E10E /* SLBSAdItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSAdItem.h; sourceTree = "<group>"; };
+		71301A011DDC2E5200E9E10E /* SLBSAdItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSAdItem.m; sourceTree = "<group>"; };
+		715919841DDEB33D0092F0EC /* SLBSSubTagItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSSubTagItem.h; sourceTree = "<group>"; };
+		715919851DDEB33D0092F0EC /* SLBSSubTagItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSSubTagItem.m; sourceTree = "<group>"; };
+		7159198C1DDEB9770092F0EC /* SLBSSubTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSSubTagCell.h; sourceTree = "<group>"; };
+		7159198D1DDEB9770092F0EC /* SLBSSubTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSSubTagCell.m; sourceTree = "<group>"; };
+		7159198E1DDEB9770092F0EC /* SLBSSubTagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SLBSSubTagCell.xib; sourceTree = "<group>"; };
 		7160DEA61DDAE2CA00413E11 /* SLBSSettingTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSSettingTVC.h; sourceTree = "<group>"; };
 		7160DEA71DDAE2CA00413E11 /* SLBSSettingTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSSettingTVC.m; sourceTree = "<group>"; };
 		7160DEAD1DDB23E100413E11 /* SLBSAdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSAdVC.h; sourceTree = "<group>"; };
@@ -192,6 +203,8 @@
 			children = (
 				7115CF781DD4205100891093 /* SLBSNewVC.h */,
 				7115CF791DD4205100891093 /* SLBSNewVC.m */,
+				710799641DDDE7270083ABBF /* SLBSSubTagTVC.h */,
+				710799651DDDE7270083ABBF /* SLBSSubTagTVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -257,8 +270,6 @@
 			children = (
 				7115CF901DD4975300891093 /* UIImage+image.h */,
 				7115CF911DD4975300891093 /* UIImage+image.m */,
-				713019FD1DDB4C0200E9E10E /* NSArray+Log.h */,
-				713019FE1DDB4C0200E9E10E /* NSArray+Log.m */,
 				7191114B1DDAA8E000616C1F /* UIView+Extension.h */,
 				7191114C1DDAA8E000616C1F /* UIView+Extension.m */,
 				7191114E1DDAB7BC00616C1F /* UIBarButtonItem+item.h */,
@@ -361,6 +372,8 @@
 		7160DEAB1DDB23B000413E11 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				71301A001DDC2E5200E9E10E /* SLBSAdItem.h */,
+				71301A011DDC2E5200E9E10E /* SLBSAdItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -419,6 +432,8 @@
 		7191115F1DDAC16A00616C1F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				715919841DDEB33D0092F0EC /* SLBSSubTagItem.h */,
+				715919851DDEB33D0092F0EC /* SLBSSubTagItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -426,6 +441,9 @@
 		719111601DDAC16A00616C1F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7159198C1DDEB9770092F0EC /* SLBSSubTagCell.h */,
+				7159198D1DDEB9770092F0EC /* SLBSSubTagCell.m */,
+				7159198E1DDEB9770092F0EC /* SLBSSubTagCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -557,6 +575,7 @@
 				7160DEC11DDB2C0E00413E11 /* LaunchImage.png in Resources */,
 				712833521DD3340A001332F9 /* Assets.xcassets in Resources */,
 				7160DEBE1DDB2C0E00413E11 /* LaunchImage-700@2x.png in Resources */,
+				715919901DDEB9770092F0EC /* SLBSSubTagCell.xib in Resources */,
 				7160DEC01DDB2C0E00413E11 /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
 				7160DEBC1DDB2C0E00413E11 /* LaunchImage-568h@2x.png in Resources */,
 				7160DEBF1DDB2C0E00413E11 /* LaunchImage-800-667h@2x.png in Resources */,
@@ -621,6 +640,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7115CF741DD4202000891093 /* SLBSBaseVC.m in Sources */,
+				7159198F1DDEB9770092F0EC /* SLBSSubTagCell.m in Sources */,
 				7160DEAF1DDB23E100413E11 /* SLBSAdVC.m in Sources */,
 				7115CF711DD4200C00891093 /* SLBSBaseTVC.m in Sources */,
 				7191116A1DDAC1F300616C1F /* SLBSTabBar.m in Sources */,
@@ -629,14 +649,16 @@
 				7115CF921DD4975300891093 /* UIImage+image.m in Sources */,
 				719111541DDAC0C900616C1F /* SLBSMeTVC.m in Sources */,
 				7115CF641DD41D6E00891093 /* main.m in Sources */,
-				713019FF1DDB4C0200E9E10E /* NSArray+Log.m in Sources */,
 				7115CF8C1DD422CB00891093 /* SLBSBaseNavC.m in Sources */,
 				7115CF861DD4223000891093 /* SLBSBaseTabBarC.m in Sources */,
 				7160DEA81DDAE2CA00413E11 /* SLBSSettingTVC.m in Sources */,
+				715919861DDEB33D0092F0EC /* SLBSSubTagItem.m in Sources */,
 				7191114D1DDAA8E000616C1F /* UIView+Extension.m in Sources */,
+				71301A021DDC2E5200E9E10E /* SLBSAdItem.m in Sources */,
 				7115CF771DD4203B00891093 /* SLBSEssenceVC.m in Sources */,
 				7115CF631DD41D6E00891093 /* AppDelegate.m in Sources */,
 				719111501DDAB7BC00616C1F /* UIBarButtonItem+item.m in Sources */,
+				710799661DDDE7270083ABBF /* SLBSSubTagTVC.m in Sources */,
 				7115CF7D1DD4206900891093 /* SLBSPublishVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

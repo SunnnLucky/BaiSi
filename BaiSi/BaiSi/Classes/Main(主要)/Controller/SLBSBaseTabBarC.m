@@ -28,9 +28,13 @@
     [super viewDidLoad];
     
     [self setUpChildVC];
+    
     [self setupAllTitleButton];
     
     [self setUpTabBar];
+    
+    /*调试中的默认控制器*/
+    self.selectedIndex = 1;
 }
 
 //只会调用一次
@@ -106,7 +110,7 @@
     //最新
     imgName = @"tabBar_new_click_icon";
     SLBSBaseNavC * nav1 = self.childViewControllers[1];
-    nav1.topViewController.title = @"百思不得姐";
+//    nav1.topViewController.title = @"百思不得姐";
     nav1.tabBarItem.title = @"最新";
     nav1.tabBarItem.image = [UIImage imageOriginalWithName:[imgName stringByReplacingOccurrencesOfString:@"click_" withString:@""]];
     nav1.tabBarItem.selectedImage = [UIImage imageOriginalWithName:imgName];
@@ -114,7 +118,7 @@
     //关注
     imgName = @"tabBar_friendTrends_click_icon";
     SLBSBaseNavC * nav2 = self.childViewControllers[2];
-    nav2.topViewController.title = @"关注";
+//    nav2.topViewController.title = @"关注";
     nav2.tabBarItem.title = @"关注";
     nav2.tabBarItem.image = [UIImage imageOriginalWithName:[imgName stringByReplacingOccurrencesOfString:@"click_" withString:@""]];
     nav2.tabBarItem.selectedImage = [UIImage imageOriginalWithName:imgName];
@@ -122,7 +126,7 @@
     //我
     imgName = @"tabBar_me_click_icon";
     SLBSBaseNavC * nav3 = self.childViewControllers[3];
-    nav3.topViewController.title = @"我的";
+//    nav3.topViewController.title = @"我的";
     nav3.tabBarItem.title = @"我的";
     nav3.tabBarItem.image = [UIImage imageOriginalWithName:[imgName stringByReplacingOccurrencesOfString:@"click_" withString:@""]];
     nav3.tabBarItem.selectedImage = [UIImage imageOriginalWithName:imgName];
