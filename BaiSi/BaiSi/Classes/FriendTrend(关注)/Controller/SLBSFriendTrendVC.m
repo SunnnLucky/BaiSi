@@ -7,6 +7,7 @@
 //
 
 #import "SLBSFriendTrendVC.h"
+#import "SLBSLoginVC.h"
 
 @interface SLBSFriendTrendVC ()
 
@@ -38,5 +39,14 @@
     [alert addAction:okAction];
     [self presentViewController:alert animated:YES completion:nil];
 }
+
+#pragma mark - 登录按钮点击
+- (IBAction)didClickLogin:(id)sender {
+    SLBSLoginVC * lg = [[SLBSLoginVC alloc] init];
+    [self presentViewController:lg animated:YES completion:^{
+        
+    }];
+}
+
 
 @end

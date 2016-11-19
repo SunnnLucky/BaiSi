@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SLBSLoginVC">
+            <connections>
+                <outlet property="bottomView" destination="Yhv-ul-Hf3" id="x1v-en-0cF"/>
+                <outlet property="leadCons" destination="idX-mI-in5" id="4ex-IO-c2V"/>
+                <outlet property="midView" destination="m0E-9R-wHj" id="lDP-P7-CTe"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_register_background" translatesAutoresizingMaskIntoConstraints="NO" id="Cmw-EF-vpn">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uAY-iN-OYq" userLabel="Top">
+                    <rect key="frame" x="0.0" y="20" width="375" height="35"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4F-3U-YHR">
+                            <rect key="frame" x="10" y="0.0" width="35" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="35" id="7Po-qC-taB"/>
+                            </constraints>
+                            <state key="normal" image="login_close_icon"/>
+                            <connections>
+                                <action selector="didClickClose:" destination="-1" eventType="touchUpInside" id="W0l-Xk-q0M"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Y0-Zo-h8x">
+                            <rect key="frame" x="280" y="0.0" width="85" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="85" id="nhS-7z-IjO"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" title="注册账号">
+                                <color key="titleColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <state key="selected" title="已有账号？"/>
+                            <connections>
+                                <action selector="didClickRegister:" destination="-1" eventType="touchUpInside" id="XFX-Gz-mUg"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="74m-yb-Djh"/>
+                        <constraint firstAttribute="bottom" secondItem="g4F-3U-YHR" secondAttribute="bottom" id="C7l-ZS-xSZ"/>
+                        <constraint firstItem="g4F-3U-YHR" firstAttribute="leading" secondItem="uAY-iN-OYq" secondAttribute="leading" constant="10" id="VuK-jv-Q6S"/>
+                        <constraint firstAttribute="trailing" secondItem="5Y0-Zo-h8x" secondAttribute="trailing" constant="10" id="Who-Bt-3pP"/>
+                        <constraint firstItem="g4F-3U-YHR" firstAttribute="top" secondItem="uAY-iN-OYq" secondAttribute="top" id="dl9-Py-2Lr"/>
+                        <constraint firstAttribute="bottom" secondItem="5Y0-Zo-h8x" secondAttribute="bottom" id="eio-pR-Mdg"/>
+                        <constraint firstItem="5Y0-Zo-h8x" firstAttribute="top" secondItem="uAY-iN-OYq" secondAttribute="top" id="mAi-YR-vpj"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m0E-9R-wHj" userLabel="Middie">
+                    <rect key="frame" x="0.0" y="115" width="750" height="300"/>
+                    <color key="backgroundColor" red="1" green="0.079435649669999997" blue="0.1677374589" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="GCc-2o-tpK"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yhv-ul-Hf3" userLabel="Bottom">
+                    <rect key="frame" x="0.0" y="527" width="375" height="120"/>
+                    <color key="backgroundColor" red="0.10217368197278912" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="WSB-er-2dl"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Yhv-ul-Hf3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8Wb-im-c32"/>
+                <constraint firstItem="Cmw-EF-vpn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Gxb-P4-dAs"/>
+                <constraint firstAttribute="bottom" secondItem="Yhv-ul-Hf3" secondAttribute="bottom" constant="20" id="KBm-hc-9ee"/>
+                <constraint firstItem="uAY-iN-OYq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="PLt-Zz-yy6"/>
+                <constraint firstItem="Cmw-EF-vpn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PN2-co-3LY"/>
+                <constraint firstItem="uAY-iN-OYq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SBq-uA-Dke"/>
+                <constraint firstItem="m0E-9R-wHj" firstAttribute="width" secondItem="Cmw-EF-vpn" secondAttribute="width" multiplier="2" id="cqK-J0-lGw"/>
+                <constraint firstAttribute="bottom" secondItem="Cmw-EF-vpn" secondAttribute="bottom" id="hOh-lz-f5r"/>
+                <constraint firstItem="m0E-9R-wHj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="idX-mI-in5"/>
+                <constraint firstAttribute="trailing" secondItem="Yhv-ul-Hf3" secondAttribute="trailing" id="w9p-Bm-Vyw"/>
+                <constraint firstItem="m0E-9R-wHj" firstAttribute="top" secondItem="uAY-iN-OYq" secondAttribute="bottom" constant="60" id="wIt-4L-6F2"/>
+                <constraint firstAttribute="trailing" secondItem="Cmw-EF-vpn" secondAttribute="trailing" id="wz8-sH-Mb1"/>
+                <constraint firstAttribute="trailing" secondItem="uAY-iN-OYq" secondAttribute="trailing" id="yJ3-tu-rDC"/>
+            </constraints>
+            <point key="canvasLocation" x="34.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="login_close_icon" width="16" height="16"/>
+        <image name="login_register_background" width="320" height="568"/>
+    </resources>
+</document>

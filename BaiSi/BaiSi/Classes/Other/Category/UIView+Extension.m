@@ -50,4 +50,23 @@
     self.frame = frame;
 }
 
+-(CGFloat)sl_centerX{
+    return self.center.x;
+}
+
+-(void)setSl_centerX:(CGFloat)sl_centerX{
+    CGPoint center = self.center;
+    center.x = sl_centerX;
+    self.center = center;
+}
+
+-(CGFloat)sl_centerY{
+    return self.center.y;
+}
+
+-(void)setSl_centerY:(CGFloat)sl_centerY{
+    CGPoint center = self.center;
+    center.y = sl_centerY;
+    self.center = center;
+}
 @end

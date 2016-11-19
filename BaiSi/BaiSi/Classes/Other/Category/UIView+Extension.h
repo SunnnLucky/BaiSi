@@ -14,5 +14,7 @@
 @property(nonatomic,assign)CGFloat sl_y;
 @property(nonatomic,assign)CGFloat sl_width;
 @property(nonatomic,assign)CGFloat sl_height;
+@property(nonatomic,assign)CGFloat sl_centerX;
+@property(nonatomic,assign)CGFloat sl_centerY;
 
 @end

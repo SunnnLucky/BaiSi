@@ -34,7 +34,7 @@
     [self setUpTabBar];
     
     /*调试中的默认控制器*/
-    self.selectedIndex = 1;
+    self.selectedIndex = 2;
 }
 
 //只会调用一次
