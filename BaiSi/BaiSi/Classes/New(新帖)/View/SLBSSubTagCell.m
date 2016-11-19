@@ -8,6 +8,7 @@
 
 #import "SLBSSubTagCell.h"
 #import "UIImageView+WebCache.h"
+#import "UIImage+Antialias.h"
 
 @interface SLBSSubTagCell()
 
@@ -30,9 +31,30 @@
      */
 }
 
+////清除cell分割线
+//-(void)setFrame:(CGRect)frame{
+//    frame.size.height -= 1;
+//    [super setFrame:frame];
+//}
+
 -(void)setItem:(SLBSSubTagItem *)item{
     _item = item;
-    [self.icon sd_setImageWithURL:[NSURL URLWithString:item.image_list] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    [self.icon sd_setImageWithURL:[NSURL URLWithString:item.image_list] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        //1.开启图形上下文
+        UIGraphicsBeginImageContextWithOptions(image.size, NO, 0);
+        //2.描述裁剪区域
+        UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, image.size.width, image.size.height)];
+        //3.设置裁剪区域
+        [path addClip];
+        //4.画图片
+        [image drawAtPoint:CGPointZero];
+        //5.取出图片
+        image = UIGraphicsGetImageFromCurrentImageContext();
+        //6.关闭上下文
+        UIGraphicsEndImageContext();
+        
+        self.icon.image = [image imageAntialias];
+    }];
     self.name.text = item.theme_name;
     
     //处理订阅人数

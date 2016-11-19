@@ -11,12 +11,15 @@
 #import "MJExtension.h"
 #import "SLBSSubTagItem.h"
 #import "SLBSSubTagCell.h"
+#import "SVProgressHUD.h"
 
 static NSString * const ID = @"subTagCell";
 
 @interface SLBSSubTagTVC ()
 //模型数组
 @property(nonatomic,strong) NSMutableArray<SLBSSubTagItem *> * itemArray;
+
+@property(nonatomic,weak)AFHTTPSessionManager * mgr;
 @end
 
 @implementation SLBSSubTagTVC
@@ -41,25 +44,45 @@ static NSString * const ID = @"subTagCell";
     //注册cell
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SLBSSubTagCell class]) bundle:nil] forCellReuseIdentifier:ID];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:17]}];
+    
+    //cell无选中效果
+    self.tableView.allowsSelection = NO;
+    //清除分割线
+    //[self clearSeparator];
+    
+    //提示用户正在加载数据
+    [SVProgressHUD showWithStatus:@"正在加载..."];
 }
 
 //请求数据
 -(void)loadData
 {
     AFHTTPSessionManager * mgr = [AFHTTPSessionManager manager];
-    
+    _mgr = mgr;
     NSMutableDictionary * parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"tag_recommend";
     parameters[@"action"] = @"sub";
     parameters[@"c"] = @"topic";
     
     [mgr GET:@"http://api.budejie.com/api/api_open.php" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSArray * responseObject) {
+        //清除提示
+        [SVProgressHUD dismiss];
+        
         self.itemArray = [SLBSSubTagItem mj_objectArrayWithKeyValuesArray:responseObject];
-        SLog(@"%@",self.itemArray);
         [self.tableView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
+        //清除提示
+        [SVProgressHUD dismiss];
     }];
+}
+
+//当界面要消失的时候调用
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    //清除提示
+    [SVProgressHUD dismiss];
+    //取消之前的请求
+    [_mgr.tasks makeObjectsPerformSelector:@selector(cancel)];
 }
 
 #pragma mark - UITableView数据源方法
@@ -68,15 +91,15 @@ static NSString * const ID = @"subTagCell";
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-
+    
     SLBSSubTagCell * cell = [tableView dequeueReusableCellWithIdentifier:ID];
     
     /*
-    使用注册Cell就不需要此步加载了
-    if (!cell) {
-        cell = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([SLBSSubTagCell class]) owner:nil options:nil].firstObject;
-    }
-    */
+     使用注册Cell就不需要此步加载了
+     if (!cell) {
+     cell = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([SLBSSubTagCell class]) owner:nil options:nil].firstObject;
+     }
+     */
     
     cell.item = self.itemArray[indexPath.row];
     cell.block = ^(SLBSSubTagItem * item){
@@ -88,5 +111,34 @@ static NSString * const ID = @"subTagCell";
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 80;
 }
+
+#pragma mark - 清除分割线
+
+//方式一:
+- (void)viewDidLayoutSubviews
+{
+    if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        [self.tableView setSeparatorInset:UIEdgeInsetsZero];
+    }
+}
+
+- (void)tableView:(UITableView*)tableView willDisplayCell:(UITableViewCell*)cell forRowAtIndexPath:(NSIndexPath*)indexPath
+{
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
+}
+
+
+/*
+ //方式二:
+ -(void)clearSeparator{
+ //1.清除分割线
+ self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+ //2.tableView背景改为分割线颜色
+ self.tableView.backgroundColor = SLColor(220, 220, 221);
+ //3.cell内部重写setframe方法
+ }
+ */
 
 @end

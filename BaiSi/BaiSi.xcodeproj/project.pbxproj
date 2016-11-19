@@ -40,6 +40,7 @@
 		719111501DDAB7BC00616C1F /* UIBarButtonItem+item.m in Sources */ = {isa = PBXBuildFile; fileRef = 7191114F1DDAB7BC00616C1F /* UIBarButtonItem+item.m */; };
 		719111541DDAC0C900616C1F /* SLBSMeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 719111531DDAC0C900616C1F /* SLBSMeTVC.m */; };
 		7191116A1DDAC1F300616C1F /* SLBSTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 719111691DDAC1F300616C1F /* SLBSTabBar.m */; };
+		71C60D181DDEF16E00C80E8C /* UIImage+Antialias.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C60D171DDEF16E00C80E8C /* UIImage+Antialias.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +100,8 @@
 		719111681DDAC1F300616C1F /* SLBSTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSTabBar.h; sourceTree = "<group>"; };
 		719111691DDAC1F300616C1F /* SLBSTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSTabBar.m; sourceTree = "<group>"; };
 		719A58741DD5CD3E00E1588D /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		71C60D161DDEF16E00C80E8C /* UIImage+Antialias.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Antialias.h"; sourceTree = "<group>"; };
+		71C60D171DDEF16E00C80E8C /* UIImage+Antialias.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Antialias.m"; sourceTree = "<group>"; };
 		9CD6F6789163AC61618F5367 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B22ABE9BBAC81EF213A94D20 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -268,6 +271,8 @@
 		7115CF8F1DD4972700891093 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				71C60D161DDEF16E00C80E8C /* UIImage+Antialias.h */,
+				71C60D171DDEF16E00C80E8C /* UIImage+Antialias.m */,
 				7115CF901DD4975300891093 /* UIImage+image.h */,
 				7115CF911DD4975300891093 /* UIImage+image.m */,
 				7191114B1DDAA8E000616C1F /* UIView+Extension.h */,
@@ -645,6 +650,7 @@
 				7115CF711DD4200C00891093 /* SLBSBaseTVC.m in Sources */,
 				7191116A1DDAC1F300616C1F /* SLBSTabBar.m in Sources */,
 				7115CF801DD4208500891093 /* SLBSFriendTrendVC.m in Sources */,
+				71C60D181DDEF16E00C80E8C /* UIImage+Antialias.m in Sources */,
 				7115CF7A1DD4205100891093 /* SLBSNewVC.m in Sources */,
 				7115CF921DD4975300891093 /* UIImage+image.m in Sources */,
 				719111541DDAC0C900616C1F /* SLBSMeTVC.m in Sources */,
