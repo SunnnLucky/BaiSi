@@ -44,6 +44,12 @@
 		717FCF4A1DE06DE7009CE804 /* SLBSFastLoginV.m in Sources */ = {isa = PBXBuildFile; fileRef = 717FCF491DE06DE7009CE804 /* SLBSFastLoginV.m */; };
 		717FCF4C1DE06DEE009CE804 /* SLBSFastLoginV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 717FCF4B1DE06DEE009CE804 /* SLBSFastLoginV.xib */; };
 		717FCF4F1DE077AA009CE804 /* SLBSFastLoginBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 717FCF4E1DE077AA009CE804 /* SLBSFastLoginBtn.m */; };
+		717FCF521DE2AE3B009CE804 /* SLBSTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 717FCF511DE2AE3B009CE804 /* SLBSTextField.m */; };
+		717FCF581DE2C66A009CE804 /* UITextField+placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 717FCF571DE2C66A009CE804 /* UITextField+placeholder.m */; };
+		717FCF5A1DE2F238009CE804 /* SLBSMeTVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 717FCF591DE2F238009CE804 /* SLBSMeTVC.storyboard */; };
+		717FCF5E1DE2F99D009CE804 /* SLBSMeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 717FCF5C1DE2F99D009CE804 /* SLBSMeCell.m */; };
+		717FCF5F1DE2F99D009CE804 /* SLBSMeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 717FCF5D1DE2F99D009CE804 /* SLBSMeCell.xib */; };
+		717FCF621DE30CE0009CE804 /* SLBSMeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 717FCF611DE30CE0009CE804 /* SLBSMeItem.m */; };
 		7191114D1DDAA8E000616C1F /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7191114C1DDAA8E000616C1F /* UIView+Extension.m */; };
 		719111501DDAB7BC00616C1F /* UIBarButtonItem+item.m in Sources */ = {isa = PBXBuildFile; fileRef = 7191114F1DDAB7BC00616C1F /* UIBarButtonItem+item.m */; };
 		719111541DDAC0C900616C1F /* SLBSMeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 719111531DDAC0C900616C1F /* SLBSMeTVC.m */; };
@@ -111,6 +117,16 @@
 		717FCF4B1DE06DEE009CE804 /* SLBSFastLoginV.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SLBSFastLoginV.xib; sourceTree = "<group>"; };
 		717FCF4D1DE077AA009CE804 /* SLBSFastLoginBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSFastLoginBtn.h; sourceTree = "<group>"; };
 		717FCF4E1DE077AA009CE804 /* SLBSFastLoginBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSFastLoginBtn.m; sourceTree = "<group>"; };
+		717FCF501DE2AE3B009CE804 /* SLBSTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSTextField.h; sourceTree = "<group>"; };
+		717FCF511DE2AE3B009CE804 /* SLBSTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSTextField.m; sourceTree = "<group>"; };
+		717FCF561DE2C66A009CE804 /* UITextField+placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+placeholder.h"; sourceTree = "<group>"; };
+		717FCF571DE2C66A009CE804 /* UITextField+placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+placeholder.m"; sourceTree = "<group>"; };
+		717FCF591DE2F238009CE804 /* SLBSMeTVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SLBSMeTVC.storyboard; sourceTree = "<group>"; };
+		717FCF5B1DE2F99D009CE804 /* SLBSMeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSMeCell.h; sourceTree = "<group>"; };
+		717FCF5C1DE2F99D009CE804 /* SLBSMeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSMeCell.m; sourceTree = "<group>"; };
+		717FCF5D1DE2F99D009CE804 /* SLBSMeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SLBSMeCell.xib; sourceTree = "<group>"; };
+		717FCF601DE30CE0009CE804 /* SLBSMeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSMeItem.h; sourceTree = "<group>"; };
+		717FCF611DE30CE0009CE804 /* SLBSMeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSMeItem.m; sourceTree = "<group>"; };
 		7191114B1DDAA8E000616C1F /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		7191114C1DDAA8E000616C1F /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		7191114E1DDAB7BC00616C1F /* UIBarButtonItem+item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+item.h"; sourceTree = "<group>"; };
@@ -301,6 +317,8 @@
 				7191114C1DDAA8E000616C1F /* UIView+Extension.m */,
 				7191114E1DDAB7BC00616C1F /* UIBarButtonItem+item.h */,
 				7191114F1DDAB7BC00616C1F /* UIBarButtonItem+item.m */,
+				717FCF561DE2C66A009CE804 /* UITextField+placeholder.h */,
+				717FCF571DE2C66A009CE804 /* UITextField+placeholder.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -464,6 +482,8 @@
 				717FCF4B1DE06DEE009CE804 /* SLBSFastLoginV.xib */,
 				717FCF4D1DE077AA009CE804 /* SLBSFastLoginBtn.h */,
 				717FCF4E1DE077AA009CE804 /* SLBSFastLoginBtn.m */,
+				717FCF501DE2AE3B009CE804 /* SLBSTextField.h */,
+				717FCF511DE2AE3B009CE804 /* SLBSTextField.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -473,6 +493,7 @@
 			children = (
 				719111521DDAC0C900616C1F /* SLBSMeTVC.h */,
 				719111531DDAC0C900616C1F /* SLBSMeTVC.m */,
+				717FCF591DE2F238009CE804 /* SLBSMeTVC.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -548,6 +569,8 @@
 		719111651DDAC19900616C1F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				717FCF601DE30CE0009CE804 /* SLBSMeItem.h */,
+				717FCF611DE30CE0009CE804 /* SLBSMeItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -555,6 +578,9 @@
 		719111661DDAC19900616C1F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				717FCF5B1DE2F99D009CE804 /* SLBSMeCell.h */,
+				717FCF5C1DE2F99D009CE804 /* SLBSMeCell.m */,
+				717FCF5D1DE2F99D009CE804 /* SLBSMeCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -643,6 +669,7 @@
 				7160DEBD1DDB2C0E00413E11 /* LaunchImage-700-568h@2x.png in Resources */,
 				7160DEC11DDB2C0E00413E11 /* LaunchImage.png in Resources */,
 				712833521DD3340A001332F9 /* Assets.xcassets in Resources */,
+				717FCF5F1DE2F99D009CE804 /* SLBSMeCell.xib in Resources */,
 				717FCF471DE04F37009CE804 /* SLBSLoginV.xib in Resources */,
 				7160DEBE1DDB2C0E00413E11 /* LaunchImage-700@2x.png in Resources */,
 				715919901DDEB9770092F0EC /* SLBSSubTagCell.xib in Resources */,
@@ -653,6 +680,7 @@
 				7160DEBF1DDB2C0E00413E11 /* LaunchImage-800-667h@2x.png in Resources */,
 				7160DEB31DDB277A00413E11 /* SLBSAdVC.xib in Resources */,
 				717FCF411DE040D6009CE804 /* SLBSLoginVC.xib in Resources */,
+				717FCF5A1DE2F238009CE804 /* SLBSMeTVC.storyboard in Resources */,
 				7160DEC21DDB2C0E00413E11 /* LaunchImage@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -713,9 +741,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7115CF741DD4202000891093 /* SLBSBaseVC.m in Sources */,
+				717FCF581DE2C66A009CE804 /* UITextField+placeholder.m in Sources */,
 				7159198F1DDEB9770092F0EC /* SLBSSubTagCell.m in Sources */,
 				7160DEAF1DDB23E100413E11 /* SLBSAdVC.m in Sources */,
 				7115CF711DD4200C00891093 /* SLBSBaseTVC.m in Sources */,
+				717FCF5E1DE2F99D009CE804 /* SLBSMeCell.m in Sources */,
 				717FCF401DE040D6009CE804 /* SLBSLoginVC.m in Sources */,
 				7191116A1DDAC1F300616C1F /* SLBSTabBar.m in Sources */,
 				7115CF801DD4208500891093 /* SLBSFriendTrendVC.m in Sources */,
@@ -736,7 +766,9 @@
 				7115CF771DD4203B00891093 /* SLBSEssenceVC.m in Sources */,
 				7115CF631DD41D6E00891093 /* AppDelegate.m in Sources */,
 				719111501DDAB7BC00616C1F /* UIBarButtonItem+item.m in Sources */,
+				717FCF521DE2AE3B009CE804 /* SLBSTextField.m in Sources */,
 				710799661DDDE7270083ABBF /* SLBSSubTagTVC.m in Sources */,
+				717FCF621DE30CE0009CE804 /* SLBSMeItem.m in Sources */,
 				7115CF7D1DD4206900891093 /* SLBSPublishVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

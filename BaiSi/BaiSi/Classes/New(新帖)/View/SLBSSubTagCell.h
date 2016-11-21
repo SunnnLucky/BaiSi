@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SLBSSubTagItem.h"
 
-typedef void(^block)(SLBSSubTagItem *);
+typedef void(^block)(SLBSSubTagItem * , BOOL);
 
 @interface SLBSSubTagCell : UITableViewCell
 

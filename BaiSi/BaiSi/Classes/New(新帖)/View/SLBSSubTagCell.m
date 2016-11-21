@@ -68,10 +68,11 @@
     self.subTag.text = [NSString stringWithFormat:@"%@人订阅",str];
 }
 
-- (IBAction)didClick:(id)sender {
+- (IBAction)didClick:(UIButton *)sender {
+    sender.selected = !sender.selected;
     //通知外界哪个按钮点击了订阅
     if (self.block) {
-        self.block(self.item);
+        self.block(self.item,sender.selected);
     }
 }
 

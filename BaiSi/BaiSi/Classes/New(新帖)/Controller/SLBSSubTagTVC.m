@@ -102,8 +102,13 @@ static NSString * const ID = @"subTagCell";
      */
     
     cell.item = self.itemArray[indexPath.row];
-    cell.block = ^(SLBSSubTagItem * item){
-        SLog(@"“%@”按钮---点击了订阅",item.theme_name);
+    cell.block = ^(SLBSSubTagItem * item , BOOL isOn){
+        //NSInteger strongest = sender.selected == YES ? 1 : -1;
+        if (isOn) {
+            [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"%@订阅成功",item.theme_name]];
+        }else{
+            [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"%@取消成功",item.theme_name]];
+        }
     };
     return cell;
 }

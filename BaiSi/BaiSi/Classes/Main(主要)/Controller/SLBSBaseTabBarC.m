@@ -34,7 +34,7 @@
     [self setUpTabBar];
     
     /*调试中的默认控制器*/
-    self.selectedIndex = 2;
+    self.selectedIndex = 3;
 }
 
 //只会调用一次
@@ -85,7 +85,8 @@
     [self addChildViewController:[self navWithVC:friend]];
 
     //我
-    SLBSMeTVC * me = [[SLBSMeTVC alloc] init];
+    UIStoryboard * story = [UIStoryboard storyboardWithName:NSStringFromClass([SLBSMeTVC class]) bundle:nil];
+    SLBSMeTVC * me = [story instantiateInitialViewController];
     [self addChildViewController:[self navWithVC:me]];
 }
 

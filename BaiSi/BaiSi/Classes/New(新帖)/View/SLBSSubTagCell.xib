@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B99-MN-eV6">
@@ -46,6 +46,9 @@
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <state key="normal" title="+ 订阅" backgroundImage="tagButtonBG">
                             <color key="titleColor" red="1" green="0.079435649669999997" blue="0.1677374589" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <state key="selected" title="已订阅">
+                            <color key="titleColor" red="0.7843137255" green="0.7843137255" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                         <state key="highlighted" backgroundImage="tagButtonBGClick"/>
                         <connections>

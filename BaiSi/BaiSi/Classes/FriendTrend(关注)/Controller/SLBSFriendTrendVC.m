@@ -43,9 +43,7 @@
 #pragma mark - 登录按钮点击
 - (IBAction)didClickLogin:(id)sender {
     SLBSLoginVC * lg = [[SLBSLoginVC alloc] init];
-    [self presentViewController:lg animated:YES completion:^{
-        
-    }];
+    [self presentViewController:lg animated:YES completion:nil];
 }
 
 
