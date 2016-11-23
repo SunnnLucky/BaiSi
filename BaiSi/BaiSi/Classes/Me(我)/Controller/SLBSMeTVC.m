@@ -12,6 +12,7 @@
 #import "SLBSLoginVC.h"
 #import "SLBSMeItem.h"
 #import <SafariServices/SafariServices.h>
+#import "SLBSWebViewVC.h"
 
 #import "AFNetworking.h"
 #import "MJExtension.h"
@@ -185,11 +186,19 @@ static NSString * const ID = @"collectionCell";
 
 #pragma mark - UICollectionViewDelegate
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    /*
     //导入<SafariServices/SafariServices.h>头文件
     if(![self.array[indexPath.row].url containsString:@"http"]) return;
     //iOS9新特性
     SFSafariViewController * safar = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:self.array[indexPath.row].url]];
     [self presentViewController:safar animated:YES completion:nil];
     //成为SFSafariViewControllerDelegate，监听点击
+     */
+    
+    //导入#import <WebKit/WebKit.h>
+    if(![self.array[indexPath.row].url containsString:@"http"]) return;
+    SLBSWebViewVC * webView = [[SLBSWebViewVC alloc] init];
+    webView.url = self.array[indexPath.row].url;
+    [self.navigationController pushViewController:webView animated:YES];
 }
 @end

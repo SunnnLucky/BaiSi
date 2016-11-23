@@ -23,6 +23,7 @@
 		712833521DD3340A001332F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 712833511DD3340A001332F9 /* Assets.xcassets */; };
 		712833551DD3340A001332F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 712833531DD3340A001332F9 /* LaunchScreen.storyboard */; };
 		71301A021DDC2E5200E9E10E /* SLBSAdItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 71301A011DDC2E5200E9E10E /* SLBSAdItem.m */; };
+		713E67311DE5601B00A842B3 /* SLFileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 713E67301DE5601B00A842B3 /* SLFileTool.m */; };
 		715919861DDEB33D0092F0EC /* SLBSSubTagItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 715919851DDEB33D0092F0EC /* SLBSSubTagItem.m */; };
 		7159198F1DDEB9770092F0EC /* SLBSSubTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7159198D1DDEB9770092F0EC /* SLBSSubTagCell.m */; };
 		715919901DDEB9770092F0EC /* SLBSSubTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7159198E1DDEB9770092F0EC /* SLBSSubTagCell.xib */; };
@@ -55,6 +56,9 @@
 		719111541DDAC0C900616C1F /* SLBSMeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 719111531DDAC0C900616C1F /* SLBSMeTVC.m */; };
 		7191116A1DDAC1F300616C1F /* SLBSTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 719111691DDAC1F300616C1F /* SLBSTabBar.m */; };
 		71C60D181DDEF16E00C80E8C /* UIImage+Antialias.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C60D171DDEF16E00C80E8C /* UIImage+Antialias.m */; };
+		71E7DBEA1DE4325F00319FC0 /* SLBSWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E7DBE81DE4325F00319FC0 /* SLBSWebViewVC.m */; };
+		71E7DBEB1DE4325F00319FC0 /* SLBSWebViewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E7DBE91DE4325F00319FC0 /* SLBSWebViewVC.xib */; };
+		71E7DBED1DE439B400319FC0 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71E7DBEC1DE439B400319FC0 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +92,8 @@
 		712833561DD3340A001332F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71301A001DDC2E5200E9E10E /* SLBSAdItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSAdItem.h; sourceTree = "<group>"; };
 		71301A011DDC2E5200E9E10E /* SLBSAdItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSAdItem.m; sourceTree = "<group>"; };
+		713E672F1DE5601B00A842B3 /* SLFileTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFileTool.h; sourceTree = "<group>"; };
+		713E67301DE5601B00A842B3 /* SLFileTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFileTool.m; sourceTree = "<group>"; };
 		715919841DDEB33D0092F0EC /* SLBSSubTagItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSSubTagItem.h; sourceTree = "<group>"; };
 		715919851DDEB33D0092F0EC /* SLBSSubTagItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSSubTagItem.m; sourceTree = "<group>"; };
 		7159198C1DDEB9770092F0EC /* SLBSSubTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSSubTagCell.h; sourceTree = "<group>"; };
@@ -138,6 +144,10 @@
 		719A58741DD5CD3E00E1588D /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		71C60D161DDEF16E00C80E8C /* UIImage+Antialias.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Antialias.h"; sourceTree = "<group>"; };
 		71C60D171DDEF16E00C80E8C /* UIImage+Antialias.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Antialias.m"; sourceTree = "<group>"; };
+		71E7DBE71DE4325F00319FC0 /* SLBSWebViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSWebViewVC.h; sourceTree = "<group>"; };
+		71E7DBE81DE4325F00319FC0 /* SLBSWebViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSWebViewVC.m; sourceTree = "<group>"; };
+		71E7DBE91DE4325F00319FC0 /* SLBSWebViewVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SLBSWebViewVC.xib; sourceTree = "<group>"; };
+		71E7DBEC1DE439B400319FC0 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		9CD6F6789163AC61618F5367 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B22ABE9BBAC81EF213A94D20 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71E7DBED1DE439B400319FC0 /* WebKit.framework in Frameworks */,
 				314B4D6736CE4778AB7D91BB /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,6 +177,7 @@
 		7115CF4A1DD41D6E00891093 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				713E672D1DE55FFE00A842B3 /* Tool(工具类) */,
 				7160DEA91DDB239A00413E11 /* AD(广告) */,
 				7115CF651DD41EC500891093 /* Main(主要) */,
 				7115CF4B1DD41D6E00891093 /* Essence(精华) */,
@@ -361,6 +373,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		713E672D1DE55FFE00A842B3 /* Tool(工具类) */ = {
+			isa = PBXGroup;
+			children = (
+				713E672E1DE55FFE00A842B3 /* File */,
+			);
+			path = "Tool(工具类)";
+			sourceTree = "<group>";
+		};
+		713E672E1DE55FFE00A842B3 /* File */ = {
+			isa = PBXGroup;
+			children = (
+				713E672F1DE5601B00A842B3 /* SLFileTool.h */,
+				713E67301DE5601B00A842B3 /* SLFileTool.m */,
+			);
+			path = File;
+			sourceTree = "<group>";
+		};
 		7160DEA21DDAE27200413E11 /* Setting(设置) */ = {
 			isa = PBXGroup;
 			children = (
@@ -494,6 +523,9 @@
 				719111521DDAC0C900616C1F /* SLBSMeTVC.h */,
 				719111531DDAC0C900616C1F /* SLBSMeTVC.m */,
 				717FCF591DE2F238009CE804 /* SLBSMeTVC.storyboard */,
+				71E7DBE71DE4325F00319FC0 /* SLBSWebViewVC.h */,
+				71E7DBE81DE4325F00319FC0 /* SLBSWebViewVC.m */,
+				71E7DBE91DE4325F00319FC0 /* SLBSWebViewVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -597,6 +629,7 @@
 		DC0A58F23F0F167AD4D6C852 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				71E7DBEC1DE439B400319FC0 /* WebKit.framework */,
 				9CD6F6789163AC61618F5367 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -667,6 +700,7 @@
 			files = (
 				712833551DD3340A001332F9 /* LaunchScreen.storyboard in Resources */,
 				7160DEBD1DDB2C0E00413E11 /* LaunchImage-700-568h@2x.png in Resources */,
+				71E7DBEB1DE4325F00319FC0 /* SLBSWebViewVC.xib in Resources */,
 				7160DEC11DDB2C0E00413E11 /* LaunchImage.png in Resources */,
 				712833521DD3340A001332F9 /* Assets.xcassets in Resources */,
 				717FCF5F1DE2F99D009CE804 /* SLBSMeCell.xib in Resources */,
@@ -744,10 +778,12 @@
 				717FCF581DE2C66A009CE804 /* UITextField+placeholder.m in Sources */,
 				7159198F1DDEB9770092F0EC /* SLBSSubTagCell.m in Sources */,
 				7160DEAF1DDB23E100413E11 /* SLBSAdVC.m in Sources */,
+				713E67311DE5601B00A842B3 /* SLFileTool.m in Sources */,
 				7115CF711DD4200C00891093 /* SLBSBaseTVC.m in Sources */,
 				717FCF5E1DE2F99D009CE804 /* SLBSMeCell.m in Sources */,
 				717FCF401DE040D6009CE804 /* SLBSLoginVC.m in Sources */,
 				7191116A1DDAC1F300616C1F /* SLBSTabBar.m in Sources */,
+				71E7DBEA1DE4325F00319FC0 /* SLBSWebViewVC.m in Sources */,
 				7115CF801DD4208500891093 /* SLBSFriendTrendVC.m in Sources */,
 				71C60D181DDEF16E00C80E8C /* UIImage+Antialias.m in Sources */,
 				7115CF7A1DD4205100891093 /* SLBSNewVC.m in Sources */,
