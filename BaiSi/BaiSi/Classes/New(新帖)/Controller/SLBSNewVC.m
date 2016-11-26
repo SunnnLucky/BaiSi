@@ -24,6 +24,9 @@
 
 #pragma mark - 设置导航条
 -(void)setUpNavBar{
+    //去除底部边线
+    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
+    
     //左边按钮
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem creatItemWithImage:[UIImage imageNamed:@"MainTagSubIcon"] andHighImage:[UIImage imageNamed:@"MainTagSubIconClick"] addTarget:self action:@selector(MainTagSubIcon)];
     
