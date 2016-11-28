@@ -56,6 +56,12 @@
 		719111541DDAC0C900616C1F /* SLBSMeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 719111531DDAC0C900616C1F /* SLBSMeTVC.m */; };
 		7191116A1DDAC1F300616C1F /* SLBSTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 719111691DDAC1F300616C1F /* SLBSTabBar.m */; };
 		71C60D181DDEF16E00C80E8C /* UIImage+Antialias.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C60D171DDEF16E00C80E8C /* UIImage+Antialias.m */; };
+		71E096111DEA9CD700FE1740 /* SLBSAllTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E096101DEA9CD700FE1740 /* SLBSAllTVC.m */; };
+		71E096141DEA9CE700FE1740 /* SLBSVideoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E096131DEA9CE700FE1740 /* SLBSVideoTVC.m */; };
+		71E096171DEA9CFA00FE1740 /* SLBSVoiceTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E096161DEA9CFA00FE1740 /* SLBSVoiceTVC.m */; };
+		71E0961A1DEA9D0C00FE1740 /* SLBSPictureTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E096191DEA9D0C00FE1740 /* SLBSPictureTVC.m */; };
+		71E0961D1DEA9D1800FE1740 /* SLBSWordTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E0961C1DEA9D1800FE1740 /* SLBSWordTVC.m */; };
+		71E096201DEAC36300FE1740 /* SLBSConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E0961F1DEAC36300FE1740 /* SLBSConst.m */; };
 		71E7DBEA1DE4325F00319FC0 /* SLBSWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E7DBE81DE4325F00319FC0 /* SLBSWebViewVC.m */; };
 		71E7DBEB1DE4325F00319FC0 /* SLBSWebViewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E7DBE91DE4325F00319FC0 /* SLBSWebViewVC.xib */; };
 		71E7DBED1DE439B400319FC0 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71E7DBEC1DE439B400319FC0 /* WebKit.framework */; };
@@ -144,6 +150,18 @@
 		719A58741DD5CD3E00E1588D /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		71C60D161DDEF16E00C80E8C /* UIImage+Antialias.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Antialias.h"; sourceTree = "<group>"; };
 		71C60D171DDEF16E00C80E8C /* UIImage+Antialias.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Antialias.m"; sourceTree = "<group>"; };
+		71E0960F1DEA9CD700FE1740 /* SLBSAllTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSAllTVC.h; sourceTree = "<group>"; };
+		71E096101DEA9CD700FE1740 /* SLBSAllTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSAllTVC.m; sourceTree = "<group>"; };
+		71E096121DEA9CE700FE1740 /* SLBSVideoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSVideoTVC.h; sourceTree = "<group>"; };
+		71E096131DEA9CE700FE1740 /* SLBSVideoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSVideoTVC.m; sourceTree = "<group>"; };
+		71E096151DEA9CFA00FE1740 /* SLBSVoiceTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSVoiceTVC.h; sourceTree = "<group>"; };
+		71E096161DEA9CFA00FE1740 /* SLBSVoiceTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSVoiceTVC.m; sourceTree = "<group>"; };
+		71E096181DEA9D0C00FE1740 /* SLBSPictureTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSPictureTVC.h; sourceTree = "<group>"; };
+		71E096191DEA9D0C00FE1740 /* SLBSPictureTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSPictureTVC.m; sourceTree = "<group>"; };
+		71E0961B1DEA9D1800FE1740 /* SLBSWordTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSWordTVC.h; sourceTree = "<group>"; };
+		71E0961C1DEA9D1800FE1740 /* SLBSWordTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSWordTVC.m; sourceTree = "<group>"; };
+		71E0961E1DEAC36300FE1740 /* SLBSConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSConst.h; sourceTree = "<group>"; };
+		71E0961F1DEAC36300FE1740 /* SLBSConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSConst.m; sourceTree = "<group>"; };
 		71E7DBE71DE4325F00319FC0 /* SLBSWebViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSWebViewVC.h; sourceTree = "<group>"; };
 		71E7DBE81DE4325F00319FC0 /* SLBSWebViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSWebViewVC.m; sourceTree = "<group>"; };
 		71E7DBE91DE4325F00319FC0 /* SLBSWebViewVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SLBSWebViewVC.xib; sourceTree = "<group>"; };
@@ -207,6 +225,11 @@
 			children = (
 				7115CF751DD4203B00891093 /* SLBSEssenceVC.h */,
 				7115CF761DD4203B00891093 /* SLBSEssenceVC.m */,
+				71E0960A1DEA9CAC00FE1740 /* All(全部) */,
+				71E0960C1DEA9CAC00FE1740 /* Video(视频) */,
+				71E0960D1DEA9CAC00FE1740 /* Voice(声音) */,
+				71E0960B1DEA9CAC00FE1740 /* Picture(图片) */,
+				71E0960E1DEA9CAC00FE1740 /* Word(段子) */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -270,6 +293,8 @@
 				7115CF5D1DD41D6E00891093 /* AppDelegate.m */,
 				7115CF5E1DD41D6E00891093 /* main.m */,
 				719A58741DD5CD3E00E1588D /* PrefixHeader.pch */,
+				71E0961E1DEAC36300FE1740 /* SLBSConst.h */,
+				71E0961F1DEAC36300FE1740 /* SLBSConst.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -626,6 +651,51 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		71E0960A1DEA9CAC00FE1740 /* All(全部) */ = {
+			isa = PBXGroup;
+			children = (
+				71E0960F1DEA9CD700FE1740 /* SLBSAllTVC.h */,
+				71E096101DEA9CD700FE1740 /* SLBSAllTVC.m */,
+			);
+			path = "All(全部)";
+			sourceTree = "<group>";
+		};
+		71E0960B1DEA9CAC00FE1740 /* Picture(图片) */ = {
+			isa = PBXGroup;
+			children = (
+				71E096181DEA9D0C00FE1740 /* SLBSPictureTVC.h */,
+				71E096191DEA9D0C00FE1740 /* SLBSPictureTVC.m */,
+			);
+			path = "Picture(图片)";
+			sourceTree = "<group>";
+		};
+		71E0960C1DEA9CAC00FE1740 /* Video(视频) */ = {
+			isa = PBXGroup;
+			children = (
+				71E096121DEA9CE700FE1740 /* SLBSVideoTVC.h */,
+				71E096131DEA9CE700FE1740 /* SLBSVideoTVC.m */,
+			);
+			path = "Video(视频)";
+			sourceTree = "<group>";
+		};
+		71E0960D1DEA9CAC00FE1740 /* Voice(声音) */ = {
+			isa = PBXGroup;
+			children = (
+				71E096151DEA9CFA00FE1740 /* SLBSVoiceTVC.h */,
+				71E096161DEA9CFA00FE1740 /* SLBSVoiceTVC.m */,
+			);
+			path = "Voice(声音)";
+			sourceTree = "<group>";
+		};
+		71E0960E1DEA9CAC00FE1740 /* Word(段子) */ = {
+			isa = PBXGroup;
+			children = (
+				71E0961B1DEA9D1800FE1740 /* SLBSWordTVC.h */,
+				71E0961C1DEA9D1800FE1740 /* SLBSWordTVC.m */,
+			);
+			path = "Word(段子)";
+			sourceTree = "<group>";
+		};
 		DC0A58F23F0F167AD4D6C852 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -775,6 +845,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7115CF741DD4202000891093 /* SLBSBaseVC.m in Sources */,
+				71E0961D1DEA9D1800FE1740 /* SLBSWordTVC.m in Sources */,
 				717FCF581DE2C66A009CE804 /* UITextField+placeholder.m in Sources */,
 				7159198F1DDEB9770092F0EC /* SLBSSubTagCell.m in Sources */,
 				7160DEAF1DDB23E100413E11 /* SLBSAdVC.m in Sources */,
@@ -795,10 +866,15 @@
 				717FCF4F1DE077AA009CE804 /* SLBSFastLoginBtn.m in Sources */,
 				7115CF861DD4223000891093 /* SLBSBaseTabBarC.m in Sources */,
 				7160DEA81DDAE2CA00413E11 /* SLBSSettingTVC.m in Sources */,
+				71E096141DEA9CE700FE1740 /* SLBSVideoTVC.m in Sources */,
+				71E096201DEAC36300FE1740 /* SLBSConst.m in Sources */,
 				715919861DDEB33D0092F0EC /* SLBSSubTagItem.m in Sources */,
 				7191114D1DDAA8E000616C1F /* UIView+Extension.m in Sources */,
+				71E0961A1DEA9D0C00FE1740 /* SLBSPictureTVC.m in Sources */,
+				71E096171DEA9CFA00FE1740 /* SLBSVoiceTVC.m in Sources */,
 				71301A021DDC2E5200E9E10E /* SLBSAdItem.m in Sources */,
 				717FCF451DE04F2C009CE804 /* SLBSLoginV.m in Sources */,
+				71E096111DEA9CD700FE1740 /* SLBSAllTVC.m in Sources */,
 				7115CF771DD4203B00891093 /* SLBSEssenceVC.m in Sources */,
 				7115CF631DD41D6E00891093 /* AppDelegate.m in Sources */,
 				719111501DDAB7BC00616C1F /* UIBarButtonItem+item.m in Sources */,

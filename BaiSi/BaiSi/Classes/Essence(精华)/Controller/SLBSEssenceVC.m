@@ -8,38 +8,88 @@
 
 #import "SLBSEssenceVC.h"
 
+#import "SLBSAllTVC.h"
+#import "SLBSVideoTVC.h"
+#import "SLBSVoiceTVC.h"
+#import "SLBSPictureTVC.h"
+#import "SLBSWordTVC.h"
 
-@interface SLBSEssenceVC ()
+static NSInteger const tagIndex = 1000;
+
+@interface SLBSEssenceVC ()<UIScrollViewDelegate>
 
 @property(nonatomic,weak)UIButton * selectedBtn;
 @property(nonatomic,weak)UIView * theLine;
+@property(nonatomic,weak)UIView * titleView;
+@property(nonatomic,weak)UIScrollView * scrollView;
+@property(nonatomic,strong)NSMutableArray * btnArray;
 
 @end
 
 @implementation SLBSEssenceVC
 
+-(NSMutableArray *)btnArray{
+    if (!_btnArray) {
+        _btnArray = [NSMutableArray array];
+    }
+    return _btnArray;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.view.backgroundColor = SLColor(247, 247, 247);
+    
     //设置导航条
     [self setUpNavBar];
+    //加载子控制器
+    [self setUpChildVC];
     //scrollView
     [self setUpScrollView];
     //titleView
     [self setUpTitleView];
 }
 
+#pragma mark - 初始化子控制器
+-(void)setUpChildVC{
+     [self addChildViewController:[SLBSAllTVC new]];
+     [self addChildViewController:[SLBSVideoTVC new]];
+     [self addChildViewController:[SLBSVoiceTVC new]];
+     [self addChildViewController:[SLBSPictureTVC new]];
+     [self addChildViewController:[SLBSWordTVC new]];
+}
+
 #pragma mark - ScrollView
 -(void)setUpScrollView{
     UIScrollView * scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-    scrollView.backgroundColor = [UIColor grayColor];
+    scrollView.showsVerticalScrollIndicator = NO;
+    scrollView.showsHorizontalScrollIndicator = NO;
+    //分页
+    scrollView.pagingEnabled = YES;
+    scrollView.bounces = NO;
+    scrollView.delegate = self;
+    /*这里用懒加载 点击标题按钮的时候再创建
+    for(int i = 0 ; i < self.childViewControllers.count ; i++){
+        UIView * childView = self.childViewControllers[i].view;
+        //frame默认有值，只设置x就好了
+        childView.sl_x = scrollView.sl_width * i;
+        childView.sl_y = TitlesViewH;
+        childView.sl_height = scrollView.sl_height - NavBarMaxY - TitlesViewH;
+        [scrollView addSubview:childView];
+    }
+     */
+    scrollView.contentSize = CGSizeMake(scrollView.sl_width * self.childViewControllers.count, 0);
+    self.scrollView = scrollView;
+    //默认显示第0个控制器view
+    [self addChildViewIntoScrollView:0];
     [self.view addSubview:scrollView];
 }
 
 #pragma mark - TitleView
 -(void)setUpTitleView{
-    UIView * titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, ScreenW, 35)];
-    titleView.backgroundColor = SLColor(244, 244, 244);
+    UIView * titleView = [[UIView alloc] initWithFrame:CGRectMake(0, NavBarMaxY, ScreenW, TitlesViewH)];
+    titleView.backgroundColor = SLColor(247, 247, 247);
+    self.titleView = titleView;
     [self.view addSubview:titleView];
     //添加标题按钮
     NSArray * nameArray = @[@"全部",@"视频",@"声音",@"图片",@"段子"];
@@ -56,6 +106,7 @@
     for (int i = 0 ; i < count ; i++) {
         UIButton * titleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         titleBtn.frame = CGRectMake(i * w, y, w, h);
+        titleBtn.tag = i + tagIndex;
         [titleBtn setTitle:nameArray[i] forState:UIControlStateNormal];
         [titleBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [titleBtn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
@@ -63,6 +114,7 @@
         [titleBtn setTitleColor:[UIColor redColor] forState:UIControlStateSelected | UIControlStateHighlighted];
         titleBtn.titleLabel.font = [UIFont systemFontOfSize:13];
         [titleBtn addTarget:self action:@selector(titleBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.btnArray addObject:titleBtn];
         if (i == 0) {
             titleBtn.selected = YES;
             self.selectedBtn = titleBtn;
@@ -85,18 +137,30 @@
 }
 
 -(void)titleBtnClick:(UIButton *)titleBtn{
+    [self scrollViewAndBtnClick:titleBtn];
+}
+
+-(void)scrollViewAndBtnClick:(UIButton *)titleBtn{
     self.selectedBtn.selected = NO;
     titleBtn.selected = YES;
     self.selectedBtn = titleBtn;
+    
+    NSInteger ratio = titleBtn.tag - tagIndex;
+    
     [UIView animateWithDuration:0.25 animations:^{
         //方法一:求当前title里字体宽度
-//        self.theLine.sl_width = [titleBtn.currentTitle sizeWithAttributes:@{NSFontAttributeName:titleBtn.titleLabel.font}].width;
+        //        self.theLine.sl_width = [titleBtn.currentTitle sizeWithAttributes:@{NSFontAttributeName:titleBtn.titleLabel.font}].width;
         //方式二:直接等于lable宽度
         self.theLine.sl_width = titleBtn.titleLabel.sl_width;
         self.theLine.sl_centerX = titleBtn.sl_centerX;
+        //滚动到对应控制器
+        self.scrollView.contentOffset = CGPointMake(ratio * ScreenW, self.scrollView.contentOffset.y);
+    }completion:^(BOOL finished) {
+        //动画结束再创建
+        [self addChildViewIntoScrollView:ratio];
     }];
-    
 }
+
 #pragma mark - 设置导航条
 -(void)setUpNavBar{
     //去除底部边线
@@ -132,4 +196,27 @@
     [alert addAction:okAction];
     [self presentViewController:alert animated:YES completion:nil];
 }
+
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    int page = round(scrollView.contentOffset.x / scrollView.frame.size.width) ;
+    //SLog(@"%lf  ,  %d",scrollView.contentOffset.x,page);
+    //SLog(@"%d",page);
+//    UIButton * btn = [self.titleView viewWithTag:page + tagIndex];
+//    [self scrollViewAndBtnClick:btn];
+    [self scrollViewAndBtnClick:self.btnArray[page]];
+}
+
+#pragma mark - 其他方法
+
+//创建子控制器
+-(void)addChildViewIntoScrollView:(NSInteger)index{
+    UIView * childView = self.childViewControllers[index].view;
+    childView.sl_x = self.scrollView.sl_width * index;
+    childView.sl_y = TitlesViewH;
+    childView.sl_height = self.scrollView.sl_height - NavBarMaxY - TitlesViewH;
+    [self.scrollView addSubview:childView];
+}
+
+
 @end

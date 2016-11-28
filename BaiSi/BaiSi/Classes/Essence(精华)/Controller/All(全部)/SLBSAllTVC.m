@@ -8,7 +8,7 @@
 
 #import "SLBSAllTVC.h"
 
-@interface SLBSAllTVC ()
+@interface SLBSAllTVC ()<UIScrollViewDelegate>
 
 @end
 

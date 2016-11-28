@@ -1,13 +1,10 @@
-//
-//  SLBSConst.m
-//  BaiSi
-//
-//  Created by 孙磊 on 2016/11/27.
-//  Copyright © 2016年 Sun. All rights reserved.
-//
-
 #import "SLBSConst.h"
 
-@implementation SLBSConst
+/**UITabBar的高度 */
+CGFloat const TabBarH = 49;
 
-@end
+/** 标题栏的高度的高度 */
+CGFloat const TitlesViewH = 35;
+
+/** NavigationBar的高度的高度 */
+CGFloat const NavBarMaxY = 64;

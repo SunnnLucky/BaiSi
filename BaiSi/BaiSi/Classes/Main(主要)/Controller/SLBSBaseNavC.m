@@ -36,6 +36,7 @@
     UINavigationBar *navBar = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[self]];
     [navBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:20]}];
     [navBar setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
+//    [navBar setBackgroundColor:SLColor(247, 247, 247)];
 }
 
 -(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated

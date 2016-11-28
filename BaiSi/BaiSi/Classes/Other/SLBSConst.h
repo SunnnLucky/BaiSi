@@ -1,13 +1,10 @@
-//
-//  SLBSConst.h
-//  BaiSi
-//
-//  Created by 孙磊 on 2016/11/27.
-//  Copyright © 2016年 Sun. All rights reserved.
-//
+#import <UIKit/UIKit.h>
 
-#import <Foundation/Foundation.h>
+/** UITabBar的高度 */
+UIKIT_EXTERN CGFloat const TabBarH;
 
-@interface SLBSConst : NSObject
+/** 标题栏的高度的高度 */
+UIKIT_EXTERN CGFloat const TitlesViewH;
 
-@end
+/** 导航栏的最大Y值 */
+UIKIT_EXTERN CGFloat const NavBarMaxY;
