@@ -64,9 +64,9 @@ static NSInteger const tagIndex = 1000;
     UIScrollView * scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.showsHorizontalScrollIndicator = NO;
-    //分页
-    scrollView.pagingEnabled = YES;
+    scrollView.pagingEnabled = YES;    //分页
     scrollView.bounces = NO;
+    scrollView.scrollsToTop = NO;    //点击状态栏不滚动
     scrollView.delegate = self;
     /*这里用懒加载 点击标题按钮的时候再创建
     for(int i = 0 ; i < self.childViewControllers.count ; i++){
@@ -159,6 +159,17 @@ static NSInteger const tagIndex = 1000;
         //动画结束再创建
         [self addChildViewIntoScrollView:ratio];
     }];
+    
+    //处理scrollview点击状态栏可否滚动到顶部
+    for (int i = 0 ; i < self.childViewControllers.count; i++) {
+        UIViewController * vc = self.childViewControllers[i];
+        if (!vc.isViewLoaded) continue;     //如果没加载就不设置
+        
+        UIScrollView * scrollView = (UIScrollView *)vc.view;
+        if (![scrollView isKindOfClass:[UIScrollView class]])  continue;
+        
+        scrollView.scrollsToTop = (i == ratio);
+    }
 }
 
 #pragma mark - 设置导航条
@@ -212,6 +223,13 @@ static NSInteger const tagIndex = 1000;
 //创建子控制器
 -(void)addChildViewIntoScrollView:(NSInteger)index{
     UIView * childView = self.childViewControllers[index].view;
+    
+    //如果被添加过了，就返回
+    //方法一:
+    if(childView.superview) return;
+    //方法二:
+    //if(childView.window) return;
+    
     childView.sl_x = self.scrollView.sl_width * index;
     childView.sl_y = TitlesViewH;
     childView.sl_height = self.scrollView.sl_height - NavBarMaxY - TitlesViewH;

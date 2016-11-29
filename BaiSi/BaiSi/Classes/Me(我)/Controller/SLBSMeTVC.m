@@ -133,8 +133,10 @@ static NSString * const ID = @"collectionCell";
 }
 
 #pragma mark - UICollectionViewDataSource
+
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.array.count;
+//    return 0;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{

@@ -6,8 +6,8 @@
 //  Copyright © 2016年 Sun. All rights reserved.
 //
 
-#import "SLBSBaseTVC.h"
+#import "SLBSEssenceBaseTVC.h"
 
-@interface SLBSAllTVC : SLBSBaseTVC
+@interface SLBSAllTVC : SLBSEssenceBaseTVC
 
 @end

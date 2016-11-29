@@ -22,6 +22,7 @@
 		7115CF921DD4975300891093 /* UIImage+image.m in Sources */ = {isa = PBXBuildFile; fileRef = 7115CF911DD4975300891093 /* UIImage+image.m */; };
 		712833521DD3340A001332F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 712833511DD3340A001332F9 /* Assets.xcassets */; };
 		712833551DD3340A001332F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 712833531DD3340A001332F9 /* LaunchScreen.storyboard */; };
+		712E6D6D1DED2560005A3CB6 /* SLBSEssenceBaseTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 712E6D6C1DED2560005A3CB6 /* SLBSEssenceBaseTVC.m */; };
 		71301A021DDC2E5200E9E10E /* SLBSAdItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 71301A011DDC2E5200E9E10E /* SLBSAdItem.m */; };
 		713E67311DE5601B00A842B3 /* SLFileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 713E67301DE5601B00A842B3 /* SLFileTool.m */; };
 		715919861DDEB33D0092F0EC /* SLBSSubTagItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 715919851DDEB33D0092F0EC /* SLBSSubTagItem.m */; };
@@ -96,6 +97,8 @@
 		712833511DD3340A001332F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		712833541DD3340A001332F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		712833561DD3340A001332F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		712E6D6B1DED2560005A3CB6 /* SLBSEssenceBaseTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSEssenceBaseTVC.h; sourceTree = "<group>"; };
+		712E6D6C1DED2560005A3CB6 /* SLBSEssenceBaseTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSEssenceBaseTVC.m; sourceTree = "<group>"; };
 		71301A001DDC2E5200E9E10E /* SLBSAdItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSAdItem.h; sourceTree = "<group>"; };
 		71301A011DDC2E5200E9E10E /* SLBSAdItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSAdItem.m; sourceTree = "<group>"; };
 		713E672F1DE5601B00A842B3 /* SLFileTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFileTool.h; sourceTree = "<group>"; };
@@ -225,6 +228,8 @@
 			children = (
 				7115CF751DD4203B00891093 /* SLBSEssenceVC.h */,
 				7115CF761DD4203B00891093 /* SLBSEssenceVC.m */,
+				712E6D6B1DED2560005A3CB6 /* SLBSEssenceBaseTVC.h */,
+				712E6D6C1DED2560005A3CB6 /* SLBSEssenceBaseTVC.m */,
 				71E0960A1DEA9CAC00FE1740 /* All(全部) */,
 				71E0960C1DEA9CAC00FE1740 /* Video(视频) */,
 				71E0960D1DEA9CAC00FE1740 /* Voice(声音) */,
@@ -875,6 +880,7 @@
 				71301A021DDC2E5200E9E10E /* SLBSAdItem.m in Sources */,
 				717FCF451DE04F2C009CE804 /* SLBSLoginV.m in Sources */,
 				71E096111DEA9CD700FE1740 /* SLBSAllTVC.m in Sources */,
+				712E6D6D1DED2560005A3CB6 /* SLBSEssenceBaseTVC.m in Sources */,
 				7115CF771DD4203B00891093 /* SLBSEssenceVC.m in Sources */,
 				7115CF631DD41D6E00891093 /* AppDelegate.m in Sources */,
 				719111501DDAB7BC00616C1F /* UIBarButtonItem+item.m in Sources */,
