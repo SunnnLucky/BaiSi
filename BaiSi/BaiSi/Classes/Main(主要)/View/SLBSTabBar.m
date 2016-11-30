@@ -11,6 +11,7 @@
 @interface SLBSTabBar()
 
 @property(nonatomic,strong)UIButton * plusBtn;
+@property(nonatomic,weak)UIControl * lastClickBtn;
 
 @end
 
@@ -29,27 +30,45 @@
 
 -(void)layoutSubviews
 {
-//    SLog(@"%d",self.items.count);
+    //    SLog(@"%d",self.items.count);
     [super layoutSubviews];
     
     NSUInteger count = self.items.count + 1;
     CGFloat btnW = self.sl_width / count;
     CGFloat btnH = self.sl_height;
     int i = 0;
-//    SLog(@"%@",self.subviews);
+    //    SLog(@"%@",self.subviews);
     
-    for (UIView * btn in self.subviews) {
+    for (UIControl * btn in self.subviews) {
         if ([btn isKindOfClass:NSClassFromString(@"UITabBarButton")]){
-        if (i == 2) {
-            i += 1;
-        }
-        btn.frame = CGRectMake(i * btnW, 0, btnW, btnH);
-        i++;
+            
+            if (i == 0 && self.lastClickBtn == nil){
+                self.lastClickBtn = btn;
+            }
+            
+            if (i == 2) {
+                i += 1;
+            }
+            
+            btn.frame = CGRectMake(i * btnW, 0, btnW, btnH);
+            
+            [btn addTarget:self action:@selector(tabBarButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+            
+            i++;
         }
     }
     
     self.plusBtn.center = CGPointMake(self.sl_width * 0.5, self.sl_height * 0.5);
-//    SLog(@"%@",self.plusBtn);
+    //    SLog(@"%@",self.plusBtn);
+}
+
+-(void)tabBarButtonClick:(UIControl *)tabBarButton{
+    if (tabBarButton == self.lastClickBtn) {
+        //重复点击时
+        //SLBSTabBarButtonDidRepeatClickNotification
+        [[NSNotificationCenter defaultCenter] postNotificationName:SLBSTabBarButtonDidRepeatClickNotification object:nil];
+    }
+    self.lastClickBtn = tabBarButton;
 }
 
 

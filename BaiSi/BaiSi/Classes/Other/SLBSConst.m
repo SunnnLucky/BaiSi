@@ -8,3 +8,9 @@ CGFloat const TitlesViewH = 35;
 
 /** NavigationBar的高度的高度 */
 CGFloat const NavBarMaxY = 64;
+
+/** TabBar点击通知名 */
+NSString * const SLBSTabBarButtonDidRepeatClickNotification = @"SLBSTabBarButtonDidRepeatClickNotification";
+
+/** titleView点击通知名 */
+NSString * const SLBSTitleViewButtonDidRepeatClickNotification = @"SLBSTitleViewButtonDidRepeatClickNotification";

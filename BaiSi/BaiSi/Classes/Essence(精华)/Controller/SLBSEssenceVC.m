@@ -137,6 +137,11 @@ static NSInteger const tagIndex = 1000;
 }
 
 -(void)titleBtnClick:(UIButton *)titleBtn{
+    if(self.selectedBtn == titleBtn){
+        //通知子控制器
+        [[NSNotificationCenter defaultCenter] postNotificationName:SLBSTitleViewButtonDidRepeatClickNotification object:nil];
+    }
+    
     [self scrollViewAndBtnClick:titleBtn];
 }
 

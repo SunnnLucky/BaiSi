@@ -20,7 +20,7 @@
 //    self.view.backgroundColor = randomColor;
     //滚动范围超过底部tabbar
 //    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, TabBarH, 0);
-    SLog(@"%@",NSStringFromClass([self class]));
+//    SLog(@"%@",NSStringFromClass([self class]));
 }
 
 

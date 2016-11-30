@@ -17,10 +17,34 @@ static NSString * const ID = @"BaseID";
     //    self.view.backgroundColor = randomColor;
     //滚动范围超过底部tabbar
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, TabBarH, 0);
-    SLog(@"%@",NSStringFromClass([self class]));
+    [self setUpNotification];
+}
+
+#pragma mark - Notification
+-(void)setUpNotification{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(TabBarButtonDidRepeatClick) name:SLBSTabBarButtonDidRepeatClickNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(titleViewButtonDidRepeatClick) name:SLBSTitleViewButtonDidRepeatClickNotification object:nil];
+}
+
+-(void)TabBarButtonDidRepeatClick{
+    //如果当前点击的不是精华控制器，就返回
+    if (self.view.window == nil) return;
+    //如果显示在中间的不是all界面，就返回
+    if (self.tableView.scrollsToTop == NO) return;
+    //刷新...
+    SLog(@"%s-------%@",__func__,[self class]);
+}
+
+-(void)titleViewButtonDidRepeatClick{
+    [self TabBarButtonDidRepeatClick];
+}
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
+#pragma mark - tableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 20;
 }
