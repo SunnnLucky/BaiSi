@@ -64,7 +64,7 @@ static NSString * const ID = @"subTagCell";
     parameters[@"action"] = @"sub";
     parameters[@"c"] = @"topic";
     
-    [mgr GET:@"http://api.budejie.com/api/api_open.php" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSArray * responseObject) {
+    [mgr GET:SLBSCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSArray * responseObject) {
         //清除提示
         [SVProgressHUD dismiss];
         

@@ -17,4 +17,6 @@
 @property(nonatomic,assign)CGFloat sl_centerX;
 @property(nonatomic,assign)CGFloat sl_centerY;
 
++(void)showMessage:(id)message andVC:(UIViewController *)view;
+
 @end

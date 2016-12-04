@@ -28,6 +28,8 @@
 #define iPhone5 (ScreenH == 568)
 #define iPhone4 (ScreenH == 480)
 
+/*---------------------写入数据------------------------*/
+#define SLBSAFNWriteToFile(fileName) [responseObject writeToFile:[NSString stringWithFormat:@"/Users/sunlei/Desktop/孙磊/%@.plist",@#fileName] atomically:YES];
 
 /*---------------------打印控制------------------------*/
 #ifdef DEBUG

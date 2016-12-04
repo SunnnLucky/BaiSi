@@ -7,12 +7,16 @@
 //
 
 #import "SLBSEssenceBaseTVC.h"
+#import "SLBSEssenceItem.h"
+#import "AFNetworking.h"
+#import "MJExtension.h"
+
 
 static NSString * const ID = @"BaseID";
 
 @interface SLBSEssenceBaseTVC()
 
-@property(nonatomic,assign) NSInteger dataCount;
+@property(nonatomic,strong)NSMutableArray<SLBSEssenceItem *> * array;
 @property(nonatomic,weak)UIView * headerView;
 @property(nonatomic,weak)UIView * footerView;
 @property(nonatomic,weak)UILabel * footerLable;
@@ -28,6 +32,13 @@ static NSString * const ID = @"BaseID";
 
 @implementation SLBSEssenceBaseTVC
 
+-(NSMutableArray<SLBSEssenceItem *> *)array{
+    if (!_array) {
+        _array = [NSMutableArray array];
+    }
+    return _array;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     //    self.view.backgroundColor = randomColor;
@@ -38,11 +49,11 @@ static NSString * const ID = @"BaseID";
     
     self.tableView.backgroundColor = SLColor(247, 247, 247);
     
-    //模拟数据
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        self.dataCount = 30;
-        [self.tableView reloadData];
-    });
+//    //模拟数据
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        self.dataCount = 30;
+//        [self.tableView reloadData];
+//    });
     
     //初始化通知
     [self setUpNotification];
@@ -103,6 +114,9 @@ static NSString * const ID = @"BaseID";
     self.arrow = arrow;
     
     [self.tableView addSubview:headerView];
+    
+    //初始化完成后请求数据
+    [self headerBeginRefreshing];
 }
 
 -(void)setUpFooterView{
@@ -159,16 +173,20 @@ static NSString * const ID = @"BaseID";
 
 #pragma mark - tableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    self.footerView.hidden = (self.dataCount == 0);
-    return self.dataCount;
+    self.footerView.hidden = (self.array.count == 0);
+    return self.array.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"%@-----%zd",NSStringFromClass([self class]),indexPath.row];
+    
+    SLBSEssenceItem * item = self.array[indexPath.row];
+    cell.textLabel.text = item.name;
+    cell.detailTextLabel.text = item.text;
+    
     return cell;
 }
 
@@ -187,6 +205,16 @@ static NSString * const ID = @"BaseID";
     if (self.tableView.contentOffset.y <= offset) {
         [self headerBeginRefreshing];
     }
+}
+
+#pragma mark - 判断当前是哪个控制器
+-(NSString *)judgeCurrentTVC{
+    if ([self isKindOfClass:NSClassFromString(@"SLBSAllTVC")]) return @"1";
+    if ([self isKindOfClass:NSClassFromString(@"SLBSVideoTVC")]) return @"41";
+    if ([self isKindOfClass:NSClassFromString(@"SLBSVoiceTVC")]) return @"31";
+    if ([self isKindOfClass:NSClassFromString(@"SLBSPictureTVC")]) return @"10";
+    if ([self isKindOfClass:NSClassFromString(@"SLBSWordTVC")]) return @"29";
+    return nil;
 }
 
 #pragma mark - header & footer 业务逻辑
@@ -275,13 +303,23 @@ static NSString * const ID = @"BaseID";
  下拉刷新
  */
 -(void)headerLoadData{
-    //模拟数据请求
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        SLog(@"请求数据");
-        [self headerEndRefreshing];
-        
+    AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
+    
+    NSMutableDictionary * parameters = [NSMutableDictionary dictionary];
+    parameters[@"a"] = @"list";
+    parameters[@"c"] = @"data";
+    parameters[@"type"] = [self judgeCurrentTVC];
+    
+    [manager GET:SLBSCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSArray * responseArray = responseObject[@"list"];
+        self.array = [SLBSEssenceItem mj_objectArrayWithKeyValuesArray:responseArray];
+
         [self.tableView reloadData];
-    });
+        [self headerEndRefreshing];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [UIView showMessage:@"请求失败" andVC:self];
+        [self headerEndRefreshing];
+    }];
 }
 
 /**
@@ -289,10 +327,24 @@ static NSString * const ID = @"BaseID";
  */
 -(void)footerLoadData{
     //发送请求
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self footerEndRefreshing];
-        self.dataCount += 5;
+    AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
+    
+    NSMutableDictionary * parameters = [NSMutableDictionary dictionary];
+    parameters[@"a"] = @"list";
+    parameters[@"c"] = @"data";
+    parameters[@"type"] = [self judgeCurrentTVC];
+    
+    [manager GET:SLBSCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSArray * responseArray = responseObject[@"list"];
+        NSArray * moreTopics = [SLBSEssenceItem mj_objectArrayWithKeyValuesArray:responseArray];
+        
+        [self.array addObjectsFromArray:moreTopics];
+        
         [self.tableView reloadData];
-    });
+        [self footerEndRefreshing];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [UIView showMessage:@"请求失败" andVC:self];
+        [self footerEndRefreshing];
+    }];
 }
 @end

@@ -9,6 +9,9 @@ UIKIT_EXTERN CGFloat const TitlesViewH;
 /** 导航栏的最大Y值 */
 UIKIT_EXTERN CGFloat const NavBarMaxY;
 
+/** 统一请求路径 */
+UIKIT_EXTERN NSString * const SLBSCommonURL;
+
 /** TabBar点击通知名 */
 UIKIT_EXTERN NSString * const SLBSTabBarButtonDidRepeatClickNotification;
 

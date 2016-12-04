@@ -92,7 +92,7 @@ static NSString * const ID = @"collectionCell";
     parameters[@"a"] = @"square";
     parameters[@"c"] = @"topic";
     
-    [mgr GET:@"http://api.budejie.com/api/api_open.php" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * responseObject) {
+    [mgr GET:SLBSCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * responseObject) {
         NSArray * responseArray = responseObject[@"square_list"];
         self.array = [SLBSMeItem mj_objectArrayWithKeyValuesArray:responseArray];
         

@@ -20,6 +20,7 @@
 		7115CF861DD4223000891093 /* SLBSBaseTabBarC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7115CF851DD4223000891093 /* SLBSBaseTabBarC.m */; };
 		7115CF8C1DD422CB00891093 /* SLBSBaseNavC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7115CF8B1DD422CB00891093 /* SLBSBaseNavC.m */; };
 		7115CF921DD4975300891093 /* UIImage+image.m in Sources */ = {isa = PBXBuildFile; fileRef = 7115CF911DD4975300891093 /* UIImage+image.m */; };
+		7120385E1DF400E500668FD8 /* SLBSEssenceItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7120385D1DF400E500668FD8 /* SLBSEssenceItem.m */; };
 		712833521DD3340A001332F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 712833511DD3340A001332F9 /* Assets.xcassets */; };
 		712833551DD3340A001332F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 712833531DD3340A001332F9 /* LaunchScreen.storyboard */; };
 		712E6D6D1DED2560005A3CB6 /* SLBSEssenceBaseTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 712E6D6C1DED2560005A3CB6 /* SLBSEssenceBaseTVC.m */; };
@@ -93,6 +94,8 @@
 		7115CF8B1DD422CB00891093 /* SLBSBaseNavC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSBaseNavC.m; sourceTree = "<group>"; };
 		7115CF901DD4975300891093 /* UIImage+image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+image.h"; sourceTree = "<group>"; };
 		7115CF911DD4975300891093 /* UIImage+image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+image.m"; sourceTree = "<group>"; };
+		7120385C1DF400E500668FD8 /* SLBSEssenceItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSEssenceItem.h; sourceTree = "<group>"; };
+		7120385D1DF400E500668FD8 /* SLBSEssenceItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSEssenceItem.m; sourceTree = "<group>"; };
 		712833421DD3340A001332F9 /* BaiSi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaiSi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		712833511DD3340A001332F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		712833541DD3340A001332F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -570,6 +573,8 @@
 		7191115D1DDAC15B00616C1F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7120385C1DF400E500668FD8 /* SLBSEssenceItem.h */,
+				7120385D1DF400E500668FD8 /* SLBSEssenceItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -862,6 +867,7 @@
 				71E7DBEA1DE4325F00319FC0 /* SLBSWebViewVC.m in Sources */,
 				7115CF801DD4208500891093 /* SLBSFriendTrendVC.m in Sources */,
 				71C60D181DDEF16E00C80E8C /* UIImage+Antialias.m in Sources */,
+				7120385E1DF400E500668FD8 /* SLBSEssenceItem.m in Sources */,
 				7115CF7A1DD4205100891093 /* SLBSNewVC.m in Sources */,
 				717FCF4A1DE06DE7009CE804 /* SLBSFastLoginV.m in Sources */,
 				7115CF921DD4975300891093 /* UIImage+image.m in Sources */,

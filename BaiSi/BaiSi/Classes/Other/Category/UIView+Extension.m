@@ -69,4 +69,13 @@
     center.y = sl_centerY;
     self.center = center;
 }
+
++(void)showMessage:(NSString *)message andVC:(UIViewController *)view{
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"出问题了" message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消"style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的"style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:cancelAction];
+    [alert addAction:okAction];
+    [view presentViewController:alert animated:YES completion:nil];
+}
 @end
