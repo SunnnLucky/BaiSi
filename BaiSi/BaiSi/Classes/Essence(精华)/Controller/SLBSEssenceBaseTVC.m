@@ -11,12 +11,20 @@
 #import "AFNetworking.h"
 #import "MJExtension.h"
 
+#import "SLBSTopicCell.h"
+#import "SLBSVideoCell.h"
+#import "SLBSVoiceCell.h"
+#import "SLBSPictureCell.h"
+#import "SLBSWordCell.h"
 
-static NSString * const ID = @"BaseID";
+
+static NSString * const VideoCellID = @"SLBSVideoCell";
+static NSString * const VoiceCellID = @"SLBSVoiceCell";
+static NSString * const PictureCellID = @"SLBSPictureCell";
+static NSString * const WordCellID = @"SLBSWordCell";
 
 @interface SLBSEssenceBaseTVC()
 
-@property(nonatomic,strong)NSMutableArray<SLBSEssenceItem *> * array;
 @property(nonatomic,weak)UIView * headerView;
 @property(nonatomic,weak)UIView * footerView;
 @property(nonatomic,weak)UILabel * footerLable;
@@ -28,9 +36,20 @@ static NSString * const ID = @"BaseID";
 @property(nonatomic,assign,getter=isHeaderLoading)BOOL headerViewLoading;
 @property(nonatomic,assign,getter=isFooterLoading)BOOL footerViewLoading;
 
+@property(nonatomic,strong)AFHTTPSessionManager * manager;
+/** 当前最后一条帖子描述数据 */
+@property(nonatomic,strong)NSString * maxtime;
+
 @end
 
 @implementation SLBSEssenceBaseTVC
+
+-(AFHTTPSessionManager *)manager{
+    if (!_manager) {
+        _manager = [AFHTTPSessionManager manager];
+    }
+    return _manager;
+}
 
 -(NSMutableArray<SLBSEssenceItem *> *)array{
     if (!_array) {
@@ -42,18 +61,20 @@ static NSString * const ID = @"BaseID";
 - (void)viewDidLoad {
     [super viewDidLoad];
     //    self.view.backgroundColor = randomColor;
-    //滚动范围超过底部tabbar
-    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, TabBarH, 0);
+    //滚动范围超过底部tabbar，-35是footer的高度
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, TabBarH , 0);
     //设置滚动条的内边距
-    self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+    UIEdgeInsets inset = self.tableView.contentInset;
+//    inset.bottom = TabBarH;
+    self.tableView.scrollIndicatorInsets = inset;
     
     self.tableView.backgroundColor = SLColor(247, 247, 247);
     
-//    //模拟数据
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        self.dataCount = 30;
-//        [self.tableView reloadData];
-//    });
+    //注册cell
+    [self.tableView registerClass:[SLBSVideoCell class] forCellReuseIdentifier:VideoCellID];
+    [self.tableView registerClass:[SLBSVoiceCell class] forCellReuseIdentifier:VoiceCellID];
+    [self.tableView registerClass:[SLBSPictureCell class] forCellReuseIdentifier:PictureCellID];
+    [self.tableView registerClass:[SLBSWordCell class] forCellReuseIdentifier:WordCellID];
     
     //初始化通知
     [self setUpNotification];
@@ -178,14 +199,20 @@ static NSString * const ID = @"BaseID";
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-    }
-    
     SLBSEssenceItem * item = self.array[indexPath.row];
-    cell.textLabel.text = item.name;
-    cell.detailTextLabel.text = item.text;
+    SLBSTopicCell * cell = nil;
+    /** 帖子类型 10为图片 29为段子 31为音频 41为视频 */
+    if(item.type == SLBSTopicTypeWord){
+        cell = [tableView dequeueReusableCellWithIdentifier:WordCellID];
+    }else if (item.type == SLBSTopicTypePicture){
+        cell = [tableView dequeueReusableCellWithIdentifier:PictureCellID];
+    }else if (item.type == SLBSTopicTypeVoice){
+        cell = [tableView dequeueReusableCellWithIdentifier:VoiceCellID];
+    }else if (item.type == SLBSTopicTypeVideo){
+        cell = [tableView dequeueReusableCellWithIdentifier:VideoCellID];
+    }
+
+    cell.topic = item;
     
     return cell;
 }
@@ -208,13 +235,13 @@ static NSString * const ID = @"BaseID";
 }
 
 #pragma mark - 判断当前是哪个控制器
--(NSString *)judgeCurrentTVC{
-    if ([self isKindOfClass:NSClassFromString(@"SLBSAllTVC")]) return @"1";
-    if ([self isKindOfClass:NSClassFromString(@"SLBSVideoTVC")]) return @"41";
-    if ([self isKindOfClass:NSClassFromString(@"SLBSVoiceTVC")]) return @"31";
-    if ([self isKindOfClass:NSClassFromString(@"SLBSPictureTVC")]) return @"10";
-    if ([self isKindOfClass:NSClassFromString(@"SLBSWordTVC")]) return @"29";
-    return nil;
+-(NSUInteger)judgeCurrentTVC{
+    if ([self isKindOfClass:NSClassFromString(@"SLBSAllTVC")]) return SLBSTopicTypeAll;
+    if ([self isKindOfClass:NSClassFromString(@"SLBSVideoTVC")]) return SLBSTopicTypeVideo;
+    if ([self isKindOfClass:NSClassFromString(@"SLBSVoiceTVC")]) return SLBSTopicTypeVoice;
+    if ([self isKindOfClass:NSClassFromString(@"SLBSPictureTVC")]) return SLBSTopicTypePicture;
+    if ([self isKindOfClass:NSClassFromString(@"SLBSWordTVC")]) return SLBSTopicTypeWord;
+    return 0;
 }
 
 #pragma mark - header & footer 业务逻辑
@@ -253,6 +280,8 @@ static NSString * const ID = @"BaseID";
 
 -(void)headerBeginRefreshing{
     if (self.isHeaderLoading) return;
+    //如果正在上拉加载时也返回，防止上拉下拉同时请求
+    //if (self.isFooterLoading) return;
     float offset = - ( self.tableView.contentInset.top + self.headerView.sl_height );
     __block UIEdgeInsets inset = self.tableView.contentInset;
     self.headerViewLoading = YES;
@@ -285,6 +314,9 @@ static NSString * const ID = @"BaseID";
 #pragma mark - footer
 
 -(void)footerBeginRefreshing{
+    //如果正在下拉刷新时也返回，防止上拉下拉同时请求
+    //if (self.isHeaderLoading) return;
+    
     if (self.isFooterLoading) return;
     [self.footerAct startAnimating];
     self.footerViewLoading = YES;
@@ -303,21 +335,29 @@ static NSString * const ID = @"BaseID";
  下拉刷新
  */
 -(void)headerLoadData{
-    AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
+    //取消队列中的所有task，避免同时发送上拉下拉请求
+    [self.manager.tasks makeObjectsPerformSelector:@selector(cancel)];
+    //[self footerEndRefreshing];  会自动调用failure这个block
     
     NSMutableDictionary * parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
     parameters[@"c"] = @"data";
-    parameters[@"type"] = [self judgeCurrentTVC];
+    parameters[@"type"] = @([self judgeCurrentTVC]);
     
-    [manager GET:SLBSCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [self.manager GET:SLBSCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        self.maxtime = (NSString * )responseObject[@"info"][@"maxtime"];
+
         NSArray * responseArray = responseObject[@"list"];
         self.array = [SLBSEssenceItem mj_objectArrayWithKeyValuesArray:responseArray];
 
         [self.tableView reloadData];
         [self headerEndRefreshing];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [UIView showMessage:@"请求失败" andVC:self];
+        if (error.code != NSURLErrorCancelled) {
+            // NSURLErrorCancelled:-999是代码cancel的错误信息
+            [UIView showMessage:@"请求失败" andVC:self];
+        }
+        
         [self headerEndRefreshing];
     }];
 }
@@ -326,15 +366,20 @@ static NSString * const ID = @"BaseID";
  上拉加载
  */
 -(void)footerLoadData{
-    //发送请求
-    AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
+    //取消队列中的所有task，避免同时发送上拉下拉请求
+    [self.manager.tasks makeObjectsPerformSelector:@selector(cancel)];
+    //[self headerEndRefreshing];  会自动调用failure这个block
     
+    //发送请求
     NSMutableDictionary * parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
     parameters[@"c"] = @"data";
-    parameters[@"type"] = [self judgeCurrentTVC];
+    parameters[@"maxtime"] = self.maxtime;
+    parameters[@"type"] = @([self judgeCurrentTVC]);
     
-    [manager GET:SLBSCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [self.manager GET:SLBSCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        self.maxtime = (NSString * )responseObject[@"info"][@"maxtime"];
+        
         NSArray * responseArray = responseObject[@"list"];
         NSArray * moreTopics = [SLBSEssenceItem mj_objectArrayWithKeyValuesArray:responseArray];
         
@@ -343,7 +388,11 @@ static NSString * const ID = @"BaseID";
         [self.tableView reloadData];
         [self footerEndRefreshing];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [UIView showMessage:@"请求失败" andVC:self];
+        if (error.code != NSURLErrorCancelled) {
+            // NSURLErrorCancelled:-999是代码cancel的错误信息
+            [UIView showMessage:@"请求失败" andVC:self];
+        }
+        
         [self footerEndRefreshing];
     }];
 }

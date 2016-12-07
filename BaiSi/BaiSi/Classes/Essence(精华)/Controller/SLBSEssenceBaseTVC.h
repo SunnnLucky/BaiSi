@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class SLBSEssenceItem;
+
 @interface SLBSEssenceBaseTVC : UITableViewController
+
+@property(nonatomic,strong)NSMutableArray<SLBSEssenceItem *> * array;
 
 @end

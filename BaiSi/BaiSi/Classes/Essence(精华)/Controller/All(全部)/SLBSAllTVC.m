@@ -7,6 +7,7 @@
 //
 
 #import "SLBSAllTVC.h"
+#import "SLBSEssenceItem.h"
 
 @interface SLBSAllTVC ()<UIScrollViewDelegate>
 
@@ -17,6 +18,5 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
-
 
 @end
