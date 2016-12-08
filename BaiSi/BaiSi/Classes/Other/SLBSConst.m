@@ -9,6 +9,9 @@ CGFloat const TitlesViewH = 35;
 /** NavigationBar的高度的高度 */
 CGFloat const NavBarMaxY = 64;
 
+/** 全局统一的间距 */
+CGFloat const Marin = 10;
+
 /** 统一请求路径 */
 NSString * const SLBSCommonURL = @"http://api.budejie.com/api/api_open.php";
 

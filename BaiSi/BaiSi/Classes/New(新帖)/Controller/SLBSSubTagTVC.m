@@ -45,8 +45,6 @@ static NSString * const ID = @"subTagCell";
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SLBSSubTagCell class]) bundle:nil] forCellReuseIdentifier:ID];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:17]}];
     
-    //cell无选中效果
-    self.tableView.allowsSelection = NO;
     //清除分割线
     //[self clearSeparator];
     

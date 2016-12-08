@@ -12,16 +12,9 @@
 #import "MJExtension.h"
 
 #import "SLBSTopicCell.h"
-#import "SLBSVideoCell.h"
-#import "SLBSVoiceCell.h"
-#import "SLBSPictureCell.h"
-#import "SLBSWordCell.h"
 
+static NSString * const CellID = @"SLBSTopicCell";
 
-static NSString * const VideoCellID = @"SLBSVideoCell";
-static NSString * const VoiceCellID = @"SLBSVoiceCell";
-static NSString * const PictureCellID = @"SLBSPictureCell";
-static NSString * const WordCellID = @"SLBSWordCell";
 
 @interface SLBSEssenceBaseTVC()
 
@@ -60,26 +53,30 @@ static NSString * const WordCellID = @"SLBSWordCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //    self.view.backgroundColor = randomColor;
-    //滚动范围超过底部tabbar，-35是footer的高度
-    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, TabBarH , 0);
-    //设置滚动条的内边距
-    UIEdgeInsets inset = self.tableView.contentInset;
-//    inset.bottom = TabBarH;
-    self.tableView.scrollIndicatorInsets = inset;
     
-    self.tableView.backgroundColor = SLColor(247, 247, 247);
+    [self setup];
     
     //注册cell
-    [self.tableView registerClass:[SLBSVideoCell class] forCellReuseIdentifier:VideoCellID];
-    [self.tableView registerClass:[SLBSVoiceCell class] forCellReuseIdentifier:VoiceCellID];
-    [self.tableView registerClass:[SLBSPictureCell class] forCellReuseIdentifier:PictureCellID];
-    [self.tableView registerClass:[SLBSWordCell class] forCellReuseIdentifier:WordCellID];
+    [self.tableView registerNib:[UINib nibWithNibName:@"SLBSTopicCell" bundle:nil] forCellReuseIdentifier:CellID];
     
     //初始化通知
     [self setUpNotification];
     //初始化刷新
     [self setUpRefresh];
+}
+
+-(void)setup{
+    //滚动范围超过底部tabbar，-35是footer的高度
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, TabBarH , 0);
+    //设置滚动条的内边距
+    UIEdgeInsets inset = self.tableView.contentInset;
+    //    inset.bottom = TabBarH;
+    self.tableView.scrollIndicatorInsets = inset;
+    
+    self.tableView.backgroundColor = SLColor(247, 247, 247);
+    
+    //清除分割线
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 #pragma mark - Refresh
@@ -193,6 +190,10 @@ static NSString * const WordCellID = @"SLBSWordCell";
 
 
 #pragma mark - tableViewDelegate
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 200;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     self.footerView.hidden = (self.array.count == 0);
     return self.array.count;
@@ -200,20 +201,10 @@ static NSString * const WordCellID = @"SLBSWordCell";
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     SLBSEssenceItem * item = self.array[indexPath.row];
-    SLBSTopicCell * cell = nil;
-    /** 帖子类型 10为图片 29为段子 31为音频 41为视频 */
-    if(item.type == SLBSTopicTypeWord){
-        cell = [tableView dequeueReusableCellWithIdentifier:WordCellID];
-    }else if (item.type == SLBSTopicTypePicture){
-        cell = [tableView dequeueReusableCellWithIdentifier:PictureCellID];
-    }else if (item.type == SLBSTopicTypeVoice){
-        cell = [tableView dequeueReusableCellWithIdentifier:VoiceCellID];
-    }else if (item.type == SLBSTopicTypeVideo){
-        cell = [tableView dequeueReusableCellWithIdentifier:VideoCellID];
-    }
+    SLBSTopicCell * cell = [tableView dequeueReusableCellWithIdentifier:CellID];
 
     cell.topic = item;
-    
+
     return cell;
 }
 

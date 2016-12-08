@@ -8,27 +8,69 @@
 
 #import "SLBSTopicCell.h"
 #import "SLBSEssenceItem.h"
+#import "UIImageView+WebCache.h"
+
+@interface SLBSTopicCell()
+// 控件的命名 -> 功能 + 控件类型
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *passtimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *text_label;
+@property (weak, nonatomic) IBOutlet UIButton *dingButton;
+@property (weak, nonatomic) IBOutlet UIButton *caiButton;
+@property (weak, nonatomic) IBOutlet UIButton *repostButton;
+@property (weak, nonatomic) IBOutlet UIButton *commentButton;
+@end
 
 @implementation SLBSTopicCell
 
--(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
-    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self.contentView addSubview:[[UISwitch alloc] init]];
-        
-        UILabel *label = [[UILabel alloc] init];
-        label.text = NSStringFromClass(self.class);
-        [label sizeToFit];
-        label.tag = 10;
-        [self.contentView addSubview:label];
-    }
-    return self;
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    self.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mainCellBackground"]];
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 -(void)setTopic:(SLBSEssenceItem *)topic{
     _topic = topic;
-    UILabel * label = (UILabel *)[self viewWithTag:10];
-    label.text = [NSString stringWithFormat:@"%@----------------%ld",NSStringFromClass([self class]),topic.type];
-    [label sizeToFit];
+    //头像
+    UIImage * placeholderImage = [UIImage circleImageName:@"defaultUserIcon"];
+    [self.profileImageView sd_setImageWithURL:[NSURL URLWithString:topic.profile_image] placeholderImage:placeholderImage options:0 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        if (!image) return ;
+        self.profileImageView.image = [image circleImage];
+    }];
+    
+    //昵称
+    self.nameLabel.text = topic.name;
+    //通过时间
+    self.passtimeLabel.text = topic.passtime;
+    //内容
+    self.text_label.text = topic.text;
+    //顶
+    [self setupBottomTitle:self.dingButton andName:@"顶" WithNumber:topic.ding];
+    //踩
+    [self setupBottomTitle:self.caiButton andName:@"踩" WithNumber:topic.cai];
+    //转发
+    [self setupBottomTitle:self.repostButton andName:@"分享" WithNumber:topic.repost];
+    //赞
+    [self setupBottomTitle:self.commentButton andName:@"评论" WithNumber:topic.comment];
+}
+
+//应该把中文参数放在最后面。。。因为会影响后续代码提示
+-(void)setupBottomTitle:(UIButton *)btn andName:(NSString *)name WithNumber:(NSInteger)number{
+    if(number >= 10000){
+        [btn setTitle:[NSString stringWithFormat:@"%.1f万",number / 10000.0] forState:UIControlStateNormal];
+    }else if (number > 0){
+        [btn setTitle:[NSString stringWithFormat:@"%zd",number] forState:UIControlStateNormal];
+    }else{
+        [btn setTitle:name forState:UIControlStateNormal];
+    }
+}
+
+-(void)setFrame:(CGRect)frame{
+    frame.size.height -= Marin;
+    frame.origin.x += Marin;
+    frame.size.width -= Marin * 2;
+    [super setFrame:frame];
 }
 
 @end

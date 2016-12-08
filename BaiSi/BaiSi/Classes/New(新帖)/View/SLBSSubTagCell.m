@@ -29,6 +29,7 @@
     //设置裁剪
     self.icon.layer.masksToBounds = YES;
      */
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 ////清除cell分割线
@@ -40,20 +41,10 @@
 -(void)setItem:(SLBSSubTagItem *)item{
     _item = item;
     [self.icon sd_setImageWithURL:[NSURL URLWithString:item.image_list] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        //1.开启图形上下文
-        UIGraphicsBeginImageContextWithOptions(image.size, NO, 0);
-        //2.描述裁剪区域
-        UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, image.size.width, image.size.height)];
-        //3.设置裁剪区域
-        [path addClip];
-        //4.画图片
-        [image drawAtPoint:CGPointZero];
-        //5.取出图片
-        image = UIGraphicsGetImageFromCurrentImageContext();
-        //6.关闭上下文
-        UIGraphicsEndImageContext();
         
-        self.icon.image = [image imageAntialias];
+        if (!image) return ;
+        
+        self.icon.image = [[image circleImage] imageAntialias];
     }];
     self.name.text = item.theme_name;
     
