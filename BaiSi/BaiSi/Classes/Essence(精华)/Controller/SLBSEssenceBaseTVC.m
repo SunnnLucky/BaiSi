@@ -56,6 +56,9 @@ static NSString * const CellID = @"SLBSTopicCell";
     
     [self setup];
     
+//    self.tableView.estimatedRowHeight = 213;
+//    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
     //注册cell
     [self.tableView registerNib:[UINib nibWithNibName:@"SLBSTopicCell" bundle:nil] forCellReuseIdentifier:CellID];
     
@@ -190,9 +193,9 @@ static NSString * const CellID = @"SLBSTopicCell";
 
 
 #pragma mark - tableViewDelegate
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 200;
-}
+//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    return 200;
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     self.footerView.hidden = (self.array.count == 0);
