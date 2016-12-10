@@ -5,3 +5,4 @@ pod "SDWebImage"
 pod "MJRefresh"
 pod "MJExtension"
 pod 'SVProgressHUD', '~> 2.0.3'
+pod 'UITableView+FDTemplateLayoutCell_Bell', '~> 1.5.0'

@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *dingButton;
 @property (weak, nonatomic) IBOutlet UIButton *caiButton;
 @property (weak, nonatomic) IBOutlet UIButton *repostButton;
+@property (weak, nonatomic) IBOutlet UIView *hotView;
+@property (weak, nonatomic) IBOutlet UILabel *hotComment;
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;
 @end
 
@@ -28,6 +30,7 @@
     [super awakeFromNib];
     self.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mainCellBackground"]];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.hotView.backgroundColor = SLColor(247, 247, 247);
 }
 
 -(void)setTopic:(SLBSEssenceItem *)topic{
@@ -53,6 +56,22 @@
     [self setupBottomTitle:self.repostButton andName:@"分享" WithNumber:topic.repost];
     //赞
     [self setupBottomTitle:self.commentButton andName:@"评论" WithNumber:topic.comment];
+    //最热评论
+    if(topic.top_cmt.count){//有值
+        NSString * content = topic.top_cmt[0][@"content"];
+        NSString * name = topic.top_cmt[0][@"user"][@"username"];
+        if (content.length && name.length) {
+            NSMutableAttributedString * mutable = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ : %@",name,content]];
+            NSRange range = [name rangeOfString:name];
+            [mutable addAttribute:NSForegroundColorAttributeName value:SLColor(85, 195, 255) range:range];
+            self.hotView.hidden = NO;
+            self.hotComment.attributedText = mutable;
+        }else {
+            self.hotView.hidden = YES;
+        }
+    }else {//没值
+        self.hotView.hidden = YES;
+    }
 }
 
 //应该把中文参数放在最后面。。。因为会影响后续代码提示

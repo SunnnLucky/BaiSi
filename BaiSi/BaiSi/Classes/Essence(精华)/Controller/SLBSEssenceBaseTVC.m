@@ -10,6 +10,7 @@
 #import "SLBSEssenceItem.h"
 #import "AFNetworking.h"
 #import "MJExtension.h"
+#import "UITableView+FDTemplateLayoutCell.h"
 
 #import "SLBSTopicCell.h"
 
@@ -30,12 +31,21 @@ static NSString * const CellID = @"SLBSTopicCell";
 @property(nonatomic,assign,getter=isFooterLoading)BOOL footerViewLoading;
 
 @property(nonatomic,strong)AFHTTPSessionManager * manager;
+//cell缓存 第一种方案   ---   第二种方案是直接写到模型中
+//@property(nonatomic,strong)NSMutableDictionary *cellHeight;
 /** 当前最后一条帖子描述数据 */
 @property(nonatomic,strong)NSString * maxtime;
 
 @end
 
 @implementation SLBSEssenceBaseTVC
+
+//-(NSMutableDictionary *)cellHeight{
+//    if (!_cellHeight) {
+//        _cellHeight = [NSMutableDictionary dictionary];
+//    }
+//    return _cellHeight;
+//}
 
 -(AFHTTPSessionManager *)manager{
     if (!_manager) {
@@ -193,9 +203,15 @@ static NSString * const CellID = @"SLBSTopicCell";
 
 
 #pragma mark - tableViewDelegate
-//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    return 200;
-//}
+/**
+ 这个方法的特点：
+ 1.默认情况下
+ 1> 每次刷新表格时，有多少数据，这个方法就一次性调用多少次（比如有100条数据，每次reloadData时，这个方法就会一次性调用100次）
+ 2> 每当有cell进入屏幕范围内，就会调用一次这个方法
+ */
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return self.array[indexPath.row].cellHeight;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     self.footerView.hidden = (self.array.count == 0);
@@ -205,9 +221,7 @@ static NSString * const CellID = @"SLBSTopicCell";
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     SLBSEssenceItem * item = self.array[indexPath.row];
     SLBSTopicCell * cell = [tableView dequeueReusableCellWithIdentifier:CellID];
-
     cell.topic = item;
-
     return cell;
 }
 
@@ -343,7 +357,6 @@ static NSString * const CellID = @"SLBSTopicCell";
 
         NSArray * responseArray = responseObject[@"list"];
         self.array = [SLBSEssenceItem mj_objectArrayWithKeyValuesArray:responseArray];
-
         [self.tableView reloadData];
         [self headerEndRefreshing];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

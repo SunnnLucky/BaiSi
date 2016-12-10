@@ -46,6 +46,8 @@ typedef NS_ENUM(NSUInteger,SLBSTopicType) {
 @property (nonatomic, strong) NSString *text;
 /** 帖子审核通过的时间 */
 @property (nonatomic, strong) NSString *passtime;
+/** 最热评论 */
+@property (nonatomic, strong) NSArray * top_cmt;
 
 /** 顶数量 */
 @property (nonatomic, assign) NSInteger ding;
@@ -57,4 +59,7 @@ typedef NS_ENUM(NSUInteger,SLBSTopicType) {
 @property (nonatomic, assign) NSInteger comment;
 /** 帖子类型 10为图片 29为段子 31为音频 41为视频 */
 @property (nonatomic, assign) NSInteger type;
+
+/** cellHeight */
+@property(nonatomic,assign)CGFloat cellHeight;
 @end

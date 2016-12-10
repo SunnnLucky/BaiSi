@@ -37,8 +37,8 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmg-GY-Eoa">
-                        <rect key="frame" x="10" y="55" width="355" height="19.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <rect key="frame" x="10" y="55" width="355" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -168,11 +168,30 @@
                             <constraint firstAttribute="bottom" secondItem="fpB-Qu-vPF" secondAttribute="bottom" id="uPp-fM-yKS"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mom-j7-C4q">
+                        <rect key="frame" x="10" y="196.5" width="355" height="13.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最热评论" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UoE-w2-r8R">
+                                <rect key="frame" x="0.0" y="0.0" width="355" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.44969676349999999" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="UoE-w2-r8R" firstAttribute="leading" secondItem="mom-j7-C4q" secondAttribute="leading" id="Lf4-2A-wAO"/>
+                            <constraint firstAttribute="trailing" secondItem="UoE-w2-r8R" secondAttribute="trailing" id="T2F-T4-O1A"/>
+                            <constraint firstItem="UoE-w2-r8R" firstAttribute="top" secondItem="mom-j7-C4q" secondAttribute="top" id="hNG-oK-JuU"/>
+                            <constraint firstAttribute="bottom" secondItem="UoE-w2-r8R" secondAttribute="bottom" id="pif-Zc-sfE"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="2cf-Ln-28z" secondAttribute="trailing" id="5zY-rF-Qmz"/>
                     <constraint firstItem="vRh-wd-cHj" firstAttribute="top" secondItem="kOh-X2-DsF" secondAttribute="top" constant="10" id="9CO-sV-xQf"/>
                     <constraint firstItem="tjF-yA-dqf" firstAttribute="top" secondItem="kOh-X2-DsF" secondAttribute="top" constant="10" id="FTL-fk-ErZ"/>
+                    <constraint firstItem="mom-j7-C4q" firstAttribute="trailing" secondItem="lmg-GY-Eoa" secondAttribute="trailing" id="FfA-5m-tNG"/>
                     <constraint firstAttribute="trailing" secondItem="tjF-yA-dqf" secondAttribute="trailing" constant="10" id="LNP-Z0-RGl"/>
                     <constraint firstItem="lmg-GY-Eoa" firstAttribute="top" secondItem="XvB-yp-Y8v" secondAttribute="bottom" constant="10" id="LpB-pK-jdk"/>
                     <constraint firstItem="lmg-GY-Eoa" firstAttribute="leading" secondItem="vRh-wd-cHj" secondAttribute="leading" id="LyL-xc-2aG"/>
@@ -182,14 +201,18 @@
                     <constraint firstItem="vRh-wd-cHj" firstAttribute="leading" secondItem="kOh-X2-DsF" secondAttribute="leading" constant="10" id="iea-Xz-pID"/>
                     <constraint firstItem="XvB-yp-Y8v" firstAttribute="bottom" secondItem="vRh-wd-cHj" secondAttribute="bottom" id="kPv-XZ-MYh"/>
                     <constraint firstItem="lmg-GY-Eoa" firstAttribute="trailing" secondItem="tjF-yA-dqf" secondAttribute="trailing" id="lNe-ak-kg5"/>
+                    <constraint firstItem="mom-j7-C4q" firstAttribute="leading" secondItem="lmg-GY-Eoa" secondAttribute="leading" id="p8E-LI-ign"/>
                     <constraint firstItem="XuK-vT-Pdw" firstAttribute="leading" secondItem="vRh-wd-cHj" secondAttribute="trailing" constant="10" id="sxQ-cY-uiw"/>
                     <constraint firstItem="2cf-Ln-28z" firstAttribute="leading" secondItem="kOh-X2-DsF" secondAttribute="leading" id="wQ5-Vx-zJt"/>
+                    <constraint firstItem="2cf-Ln-28z" firstAttribute="top" secondItem="mom-j7-C4q" secondAttribute="bottom" constant="8.5" id="yTx-KE-kgn"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="caiButton" destination="6XE-pb-ewZ" id="0eK-Ub-54o"/>
                 <outlet property="commentButton" destination="b6m-Ud-4EW" id="GiT-fJ-YMo"/>
                 <outlet property="dingButton" destination="cdh-kX-gwd" id="dEA-c9-r36"/>
+                <outlet property="hotComment" destination="UoE-w2-r8R" id="Go5-N8-v44"/>
+                <outlet property="hotView" destination="mom-j7-C4q" id="ek0-Qr-idR"/>
                 <outlet property="nameLabel" destination="XuK-vT-Pdw" id="BcN-1B-6nB"/>
                 <outlet property="passtimeLabel" destination="XvB-yp-Y8v" id="aXQ-TF-DRd"/>
                 <outlet property="profileImageView" destination="vRh-wd-cHj" id="IgB-O9-Cj3"/>
