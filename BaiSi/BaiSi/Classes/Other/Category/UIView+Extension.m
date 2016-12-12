@@ -78,4 +78,8 @@
     [alert addAction:okAction];
     [view presentViewController:alert animated:YES completion:nil];
 }
+
++(instancetype)viewFormXib{
+    return [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil].firstObject;
+}
 @end

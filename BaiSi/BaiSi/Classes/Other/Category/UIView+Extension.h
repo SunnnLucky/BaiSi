@@ -18,5 +18,5 @@
 @property(nonatomic,assign)CGFloat sl_centerY;
 
 +(void)showMessage:(id)message andVC:(UIViewController *)view;
-
++(instancetype)viewFormXib;
 @end

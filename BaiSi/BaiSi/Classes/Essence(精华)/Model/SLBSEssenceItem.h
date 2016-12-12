@@ -46,6 +46,10 @@ typedef NS_ENUM(NSUInteger,SLBSTopicType) {
 @property (nonatomic, strong) NSString *text;
 /** 帖子审核通过的时间 */
 @property (nonatomic, strong) NSString *passtime;
+/** 音频视频图片 */
+@property (nonatomic, strong) NSString *bimageuri;
+/** 图片 */
+@property (nonatomic, strong) NSString *cdn_img;
 /** 最热评论 */
 @property (nonatomic, strong) NSArray * top_cmt;
 
@@ -60,6 +64,13 @@ typedef NS_ENUM(NSUInteger,SLBSTopicType) {
 /** 帖子类型 10为图片 29为段子 31为音频 41为视频 */
 @property (nonatomic, assign) NSInteger type;
 
+/** 宽度 */
+@property (nonatomic, assign) CGFloat width;
+/** 高度 */
+@property (nonatomic, assign) CGFloat height;
+
 /** cellHeight */
 @property(nonatomic,assign)CGFloat cellHeight;
+/** 中间view高度 */
+@property(nonatomic,assign)CGRect middleRect;
 @end
