@@ -12,25 +12,54 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SLBSTopicVideoView">
-            <rect key="frame" x="0.0" y="0.0" width="269" height="212"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bfr-bI-BXg">
-                    <rect key="frame" x="0.0" y="0.0" width="269" height="212"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5o-2E-T6Y">
+                    <rect key="frame" x="152" y="152" width="71" height="71"/>
+                    <state key="normal" image="video-play"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0播放" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTL-8Z-ggP">
+                    <rect key="frame" x="342.5" y="0.0" width="32.5" height="14.5"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epj-Ux-sZc">
+                    <rect key="frame" x="341" y="360.5" width="34" height="14.5"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <constraints>
+                <constraint firstItem="j5o-2E-T6Y" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="GDx-Xh-s1l"/>
                 <constraint firstAttribute="trailing" secondItem="Bfr-bI-BXg" secondAttribute="trailing" id="HJa-SO-wpV"/>
+                <constraint firstAttribute="trailing" secondItem="RTL-8Z-ggP" secondAttribute="trailing" id="JFS-KJ-wLg"/>
                 <constraint firstItem="Bfr-bI-BXg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Q5S-Iw-vUt"/>
+                <constraint firstItem="j5o-2E-T6Y" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="TGg-T7-6Hl"/>
+                <constraint firstItem="RTL-8Z-ggP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="VdV-s2-r8i"/>
+                <constraint firstAttribute="trailing" secondItem="epj-Ux-sZc" secondAttribute="trailing" id="af4-pk-MYT"/>
                 <constraint firstItem="Bfr-bI-BXg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="cne-ed-Gws"/>
+                <constraint firstAttribute="bottom" secondItem="epj-Ux-sZc" secondAttribute="bottom" id="qSJ-ZW-upP"/>
                 <constraint firstAttribute="bottom" secondItem="Bfr-bI-BXg" secondAttribute="bottom" id="rXR-b7-Cgp"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="image" destination="Bfr-bI-BXg" id="yGh-jN-ple"/>
+                <outlet property="playCount" destination="RTL-8Z-ggP" id="dF6-kb-Vad"/>
+                <outlet property="videoTime" destination="epj-Ux-sZc" id="gzY-Vy-opC"/>
             </connections>
-            <point key="canvasLocation" x="-18.5" y="-173"/>
+            <point key="canvasLocation" x="-46.5" y="-175"/>
         </view>
     </objects>
+    <resources>
+        <image name="video-play" width="71" height="71"/>
+    </resources>
 </document>

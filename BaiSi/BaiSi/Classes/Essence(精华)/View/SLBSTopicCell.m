@@ -120,23 +120,22 @@
         self.videoView.hidden = NO;
         self.voiceView.hidden = YES;
         self.pictureView.hidden = YES;
-        [self.videoView.image sd_setImageWithURL:[NSURL URLWithString:topic.bimageuri]];
+        self.videoView.item = topic;
     }else if (topic.type == SLBSTopicTypeVoice){//音频
         self.videoView.hidden = YES;
         self.voiceView.hidden = NO;
         self.pictureView.hidden = YES;
-        [self.voiceView.image sd_setImageWithURL:[NSURL URLWithString:topic.bimageuri]];
+        self.voiceView.item = topic;
     }else if (topic.type == SLBSTopicTypePicture){//图片
         self.videoView.hidden = YES;
         self.voiceView.hidden = YES;
         self.pictureView.hidden = NO;
-        [self.pictureView.image sd_setImageWithURL:[NSURL URLWithString:topic.cdn_img]];
+        self.pictureView.item = topic;
     }else if (topic.type == SLBSTopicTypeWord){//段子
         self.videoView.hidden = YES;
         self.voiceView.hidden = YES;
         self.pictureView.hidden = YES;
     }
-    
 }
 
 //应该把中文参数放在最后面。。。因为会影响后续代码提示

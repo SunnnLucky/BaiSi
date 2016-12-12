@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SLBSEssenceItem.h"
 
 @interface SLBSTopicVideoView : UIView
 
-@property (weak, nonatomic) IBOutlet UIImageView *image;
+@property(nonatomic , strong) SLBSEssenceItem * item;
 
 @end

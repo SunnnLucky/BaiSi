@@ -50,8 +50,14 @@ typedef NS_ENUM(NSUInteger,SLBSTopicType) {
 @property (nonatomic, strong) NSString *bimageuri;
 /** 图片 */
 @property (nonatomic, strong) NSString *cdn_img;
+/** 略缩图 */
+@property (nonatomic, strong) NSString *image0;
+/** 大图 */
+@property (nonatomic, strong) NSString *image1;
+/** 中图 */
+@property (nonatomic, strong) NSString *image2;
 /** 最热评论 */
-@property (nonatomic, strong) NSArray * top_cmt;
+@property (nonatomic, strong) NSArray *top_cmt;
 
 /** 顶数量 */
 @property (nonatomic, assign) NSInteger ding;
@@ -61,6 +67,13 @@ typedef NS_ENUM(NSUInteger,SLBSTopicType) {
 @property (nonatomic, assign) NSInteger repost;
 /** 评论数量 */
 @property (nonatomic, assign) NSInteger comment;
+/** 播放数量 */
+@property (nonatomic, assign) NSInteger playcount;
+/** 视频时长 */
+@property (nonatomic, assign) NSInteger videotime;
+/** 音频时长 */
+@property (nonatomic, assign) NSInteger voicetime;
+
 /** 帖子类型 10为图片 29为段子 31为音频 41为视频 */
 @property (nonatomic, assign) NSInteger type;
 

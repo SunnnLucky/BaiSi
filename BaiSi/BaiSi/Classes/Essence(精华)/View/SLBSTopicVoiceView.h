@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SLBSEssenceItem.h"
 
 @interface SLBSTopicVoiceView : UIView
-@property (weak, nonatomic) IBOutlet UIImageView *image;
+
+@property(nonatomic , strong) SLBSEssenceItem * item;
 
 @end
