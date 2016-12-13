@@ -7,7 +7,10 @@
 //
 
 #import "SLBSTopicPictureView.h"
+
+#import "AFNetworking.h"
 #import "UIImageView+WebCache.h"
+
 
 @interface SLBSTopicPictureView()
 
@@ -20,9 +23,10 @@
 
 -(void)setItem:(SLBSEssenceItem *)item{
     _item = item;
+    
     [self.image sd_setImageWithURL:[NSURL URLWithString:item.image0]];
     
-    if(item.middleRect.size.height == 200.5){
+    if(item.middleRect.size.height == 201){
         self.image.contentMode = UIViewContentModeTop;
         self.image.layer.masksToBounds = YES;
         self.moreButton.hidden = NO;
@@ -37,7 +41,7 @@
     [super awakeFromNib];
     //取消默认autoresizing
     self.autoresizingMask = UIViewAutoresizingNone;
-    self.moreButton.backgroundColor = [UIColor colorWithRed:100 / 255.0 green:100 / 255.0 blue:100 / 255.0 alpha:0.5];
+    self.moreButton.backgroundColor = [UIColor colorWithRed:100 / 255.0 green:100 / 255.0 blue:100 / 255.0 alpha:1];
     self.moreButton.hidden = YES;
 }
 

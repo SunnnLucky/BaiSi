@@ -8,6 +8,7 @@
 
 #import "SLBSEssenceBaseTVC.h"
 #import "SLBSEssenceItem.h"
+#import "UIImageView+WebCache.h"
 #import "AFNetworking.h"
 #import "MJExtension.h"
 #import "UITableView+FDTemplateLayoutCell.h"
@@ -402,5 +403,13 @@ static NSString * const CellID = @"SLBSTopicCell";
         
         [self footerEndRefreshing];
     }];
+    
+    [[SDImageCache sharedImageCache] setValue:nil forKey:@"memCache"];
 }
+
+-(void)didReceiveMemoryWarning{
+    [[SDImageCache sharedImageCache] setValue:nil forKey:@"memCache"];
+    [super didReceiveMemoryWarning];
+}
+
 @end

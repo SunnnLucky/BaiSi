@@ -22,8 +22,8 @@
         CGFloat middleY = _cellHeight;
         CGFloat middleW = maxSize.width;
         CGFloat middleH = self.height * middleW / self.width;
-        if (middleH >= ScreenH) {//处理图片过长的情况。服务器返回的是int类型，投机设置成float类型好判断
-            middleH = 200.5;
+        if (middleH >= ScreenH) {//处理图片过长的情况。
+            middleH = 201;
         }
         _cellHeight += middleH;
         _cellHeight += Marin;

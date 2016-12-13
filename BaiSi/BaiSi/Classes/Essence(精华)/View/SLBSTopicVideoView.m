@@ -37,8 +37,8 @@
     [super awakeFromNib];
     //取消默认autoresizing
     self.autoresizingMask = UIViewAutoresizingNone;
-    self.playCount.backgroundColor = [UIColor colorWithRed:104 / 255.0 green:104 / 255.0 blue:104 / 255.0 alpha:0.7];
-    self.videoTime.backgroundColor = [UIColor colorWithRed:104 / 255.0 green:104 / 255.0 blue:104 / 255.0 alpha:0.7];
+    self.playCount.backgroundColor = [UIColor colorWithRed:104 / 255.0 green:104 / 255.0 blue:104 / 255.0 alpha:1];
+    self.videoTime.backgroundColor = [UIColor colorWithRed:104 / 255.0 green:104 / 255.0 blue:104 / 255.0 alpha:1];
 }
 
 @end

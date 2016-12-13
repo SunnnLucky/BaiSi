@@ -28,9 +28,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *hotComment;
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;
 
-@property (strong, nonatomic) SLBSTopicVideoView * videoView;
-@property (strong, nonatomic) SLBSTopicVoiceView * voiceView;
-@property (strong, nonatomic) SLBSTopicPictureView * pictureView;
+@property (weak, nonatomic) SLBSTopicVideoView * videoView;
+@property (weak, nonatomic) SLBSTopicVoiceView * voiceView;
+@property (weak, nonatomic) SLBSTopicPictureView * pictureView;
 @end
 
 @implementation SLBSTopicCell
