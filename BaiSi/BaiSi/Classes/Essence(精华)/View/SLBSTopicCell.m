@@ -10,6 +10,7 @@
 #import "SLBSEssenceItem.h"
 #import "UIImageView+WebCache.h"
 
+#import "UIImageView+Download.h"
 #import "SLBSTopicVideoView.h"
 #import "SLBSTopicPictureView.h"
 #import "SLBSTopicVoiceView.h"
@@ -78,11 +79,7 @@
 -(void)setTopic:(SLBSEssenceItem *)topic{
     _topic = topic;
     //头像
-    UIImage * placeholderImage = [UIImage circleImageName:@"defaultUserIcon"];
-    [self.profileImageView sd_setImageWithURL:[NSURL URLWithString:topic.profile_image] placeholderImage:placeholderImage options:0 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        if (!image) return ;
-        self.profileImageView.image = [image circleImage];
-    }];
+    [self.profileImageView setHeaderIcon:topic.profile_image];
     
     //昵称
     self.nameLabel.text = topic.name;

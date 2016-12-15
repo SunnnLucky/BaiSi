@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		314B4D6736CE4778AB7D91BB /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD6F6789163AC61618F5367 /* Pods.framework */; };
 		710799661DDDE7270083ABBF /* SLBSSubTagTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 710799651DDDE7270083ABBF /* SLBSSubTagTVC.m */; };
+		710E63781E0147C30036B75C /* UIImageView+Download.m in Sources */ = {isa = PBXBuildFile; fileRef = 710E63771E0147C30036B75C /* UIImageView+Download.m */; };
 		7115CF631DD41D6E00891093 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7115CF5D1DD41D6E00891093 /* AppDelegate.m */; };
 		7115CF641DD41D6E00891093 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7115CF5E1DD41D6E00891093 /* main.m */; };
 		7115CF711DD4200C00891093 /* SLBSBaseTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7115CF701DD4200C00891093 /* SLBSBaseTVC.m */; };
@@ -81,6 +82,8 @@
 		4731205CE392B47B47282A69 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		710799641DDDE7270083ABBF /* SLBSSubTagTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSSubTagTVC.h; sourceTree = "<group>"; };
 		710799651DDDE7270083ABBF /* SLBSSubTagTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSSubTagTVC.m; sourceTree = "<group>"; };
+		710E63761E0147C30036B75C /* UIImageView+Download.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Download.h"; sourceTree = "<group>"; };
+		710E63771E0147C30036B75C /* UIImageView+Download.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Download.m"; sourceTree = "<group>"; };
 		7115CF5C1DD41D6E00891093 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7115CF5D1DD41D6E00891093 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7115CF5E1DD41D6E00891093 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -384,6 +387,8 @@
 				7191114F1DDAB7BC00616C1F /* UIBarButtonItem+item.m */,
 				717FCF561DE2C66A009CE804 /* UITextField+placeholder.h */,
 				717FCF571DE2C66A009CE804 /* UITextField+placeholder.m */,
+				710E63761E0147C30036B75C /* UIImageView+Download.h */,
+				710E63771E0147C30036B75C /* UIImageView+Download.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -908,6 +913,7 @@
 				7115CF7A1DD4205100891093 /* SLBSNewVC.m in Sources */,
 				717FCF4A1DE06DE7009CE804 /* SLBSFastLoginV.m in Sources */,
 				7115CF921DD4975300891093 /* UIImage+image.m in Sources */,
+				710E63781E0147C30036B75C /* UIImageView+Download.m in Sources */,
 				719111541DDAC0C900616C1F /* SLBSMeTVC.m in Sources */,
 				7115CF641DD41D6E00891093 /* main.m in Sources */,
 				714054BF1DFE6C3100EEC731 /* SLBSTopicVideoView.m in Sources */,

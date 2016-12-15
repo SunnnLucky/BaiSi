@@ -241,10 +241,4 @@ static NSInteger const tagIndex = 1000;
     [self.scrollView addSubview:childView];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    NSLog(@"didReceiveMemoryWarning");
-}
-
 @end

@@ -23,5 +23,9 @@
 //    SLog(@"%@",NSStringFromClass([self class]));
 }
 
+-(void)didReceiveMemoryWarning{
+    SLog(@"内存警告");
+    [super didReceiveMemoryWarning];
+}
 
 @end

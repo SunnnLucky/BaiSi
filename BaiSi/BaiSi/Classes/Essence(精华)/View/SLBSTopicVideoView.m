@@ -8,12 +8,14 @@
 
 #import "SLBSTopicVideoView.h"
 #import "UIImageView+WebCache.h"
+#import "UIImageView+Download.h"
 
 @interface SLBSTopicVideoView()
 
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UILabel *playCount;
 @property (weak, nonatomic) IBOutlet UILabel *videoTime;
+@property (weak, nonatomic) IBOutlet UIImageView *backImage;
 
 @end
 
@@ -21,7 +23,10 @@
 
 -(void)setItem:(SLBSEssenceItem *)item{
     _item = item;
-    [self.image sd_setImageWithURL:[NSURL URLWithString:item.image0]];
+    
+    [self.image setOriginImage:item.image1 thumbnail:item.image0 placeholder:nil completed:^{
+        self.backImage.hidden = YES;
+    }];
     
     if (item.playcount >= 10000) {
         self.playCount.text = [NSString stringWithFormat:@"%.2f万播放",item.playcount / 10000.0];

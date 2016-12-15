@@ -7,7 +7,7 @@
 //
 
 #import "SLBSTopicPictureView.h"
-
+#import "UIImageView+Download.h"
 #import "AFNetworking.h"
 #import "UIImageView+WebCache.h"
 
@@ -24,7 +24,7 @@
 -(void)setItem:(SLBSEssenceItem *)item{
     _item = item;
     
-    [self.image sd_setImageWithURL:[NSURL URLWithString:item.image0]];
+    [self.image setOriginImage:item.image1 thumbnail:item.image0 placeholder:nil completed:nil];
     
     if(item.middleRect.size.height == 201){
         self.image.contentMode = UIViewContentModeTop;

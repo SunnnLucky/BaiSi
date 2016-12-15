@@ -15,6 +15,12 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageBackground" translatesAutoresizingMaskIntoConstraints="NO" id="T8c-yA-arB">
+                    <rect key="frame" x="0.0" y="15" width="375" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="lBg-Uy-vRo"/>
+                    </constraints>
+                </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bfr-bI-BXg">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                 </imageView>
@@ -45,13 +51,17 @@
                 <constraint firstItem="j5o-2E-T6Y" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="TGg-T7-6Hl"/>
                 <constraint firstItem="RTL-8Z-ggP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="VdV-s2-r8i"/>
                 <constraint firstAttribute="trailing" secondItem="epj-Ux-sZc" secondAttribute="trailing" id="af4-pk-MYT"/>
+                <constraint firstAttribute="trailing" secondItem="T8c-yA-arB" secondAttribute="trailing" id="bDs-ON-yg1"/>
                 <constraint firstItem="Bfr-bI-BXg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="cne-ed-Gws"/>
+                <constraint firstItem="T8c-yA-arB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="lRG-KV-A29"/>
                 <constraint firstAttribute="bottom" secondItem="epj-Ux-sZc" secondAttribute="bottom" id="qSJ-ZW-upP"/>
                 <constraint firstAttribute="bottom" secondItem="Bfr-bI-BXg" secondAttribute="bottom" id="rXR-b7-Cgp"/>
+                <constraint firstItem="T8c-yA-arB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="wW4-Ql-6Vl"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="backImage" destination="T8c-yA-arB" id="o66-Fc-djE"/>
                 <outlet property="image" destination="Bfr-bI-BXg" id="yGh-jN-ple"/>
                 <outlet property="playCount" destination="RTL-8Z-ggP" id="dF6-kb-Vad"/>
                 <outlet property="videoTime" destination="epj-Ux-sZc" id="gzY-Vy-opC"/>
@@ -60,6 +70,7 @@
         </view>
     </objects>
     <resources>
+        <image name="imageBackground" width="75" height="15"/>
         <image name="video-play" width="71" height="71"/>
     </resources>
 </document>

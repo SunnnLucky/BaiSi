@@ -9,6 +9,7 @@
 #import "SLBSTopicVoiceView.h"
 #import "UIImageView+WebCache.h"
 #import "AFNetworking.h"
+#import "UIImageView+Download.h"
 
 @interface SLBSTopicVoiceView()
 
@@ -23,34 +24,7 @@
 -(void)setItem:(SLBSEssenceItem *)item{
     _item = item;
     
-    //判断当前网络状态
-    AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
-    
-    //判断是否下载过大图
-    //从硬盘缓存取----->默认会先从内存缓存取   key就是url
-    UIImage * bigImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:item.image1];
-    
-    if (bigImage) {/*下载过*/
-        self.image.image = bigImage;
-    }else{
-        if (manager.isReachableViaWiFi) {//wifi状态
-            [self.image sd_setImageWithURL:[NSURL URLWithString:item.image1]];
-        }else if (manager.isReachableViaWWAN){//手机自带网络
-            BOOL downloadOriginImageWen3Gor4G = NO; //真实情况是从沙盒中取
-            if(downloadOriginImageWen3Gor4G){//开启了3G/4G也下载高清图的话
-                [self.image sd_setImageWithURL:[NSURL URLWithString:item.image1]];
-            }else{
-                [self.image sd_setImageWithURL:[NSURL URLWithString:item.image0]];
-            }
-        }else {//没有网络
-            UIImage * thumbnail = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:item.image0];
-            if (thumbnail) {
-                self.image.image = thumbnail;
-            }else{
-                self.image.image = nil;
-            }
-        }
-    }
+    [self.image setOriginImage:item.image1 thumbnail:item.image0 placeholder:nil completed:nil];
     
     if (item.playcount >= 10000) {
         self.playCount.text = [NSString stringWithFormat:@"%.2f万播放",item.playcount / 10000.0];

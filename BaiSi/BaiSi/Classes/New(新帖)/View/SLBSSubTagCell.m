@@ -9,6 +9,7 @@
 #import "SLBSSubTagCell.h"
 #import "UIImageView+WebCache.h"
 #import "UIImage+Antialias.h"
+#import "UIImageView+Download.h"
 
 @interface SLBSSubTagCell()
 
@@ -40,12 +41,9 @@
 
 -(void)setItem:(SLBSSubTagItem *)item{
     _item = item;
-    [self.icon sd_setImageWithURL:[NSURL URLWithString:item.image_list] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        
-        if (!image) return ;
-        
-        self.icon.image = [[image circleImage] imageAntialias];
-    }];
+    
+    [self.icon setHeaderIcon:item.image_list];
+    
     self.name.text = item.theme_name;
     
     //处理订阅人数
