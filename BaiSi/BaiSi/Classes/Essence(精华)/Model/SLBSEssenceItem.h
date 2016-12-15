@@ -81,9 +81,13 @@ typedef NS_ENUM(NSUInteger,SLBSTopicType) {
 @property (nonatomic, assign) CGFloat width;
 /** 高度 */
 @property (nonatomic, assign) CGFloat height;
+/** 是否是动图 */
+@property (nonatomic, assign) BOOL is_gif;
 
 /** cellHeight */
-@property(nonatomic,assign)CGFloat cellHeight;
+@property (nonatomic, assign) CGFloat cellHeight;
 /** 中间view高度 */
-@property(nonatomic,assign)CGRect middleRect;
+@property (nonatomic, assign) CGRect middleRect;
+/** 长图 */
+@property (nonatomic, assign, getter=isBigPic) BOOL bigPic;
 @end

@@ -24,6 +24,7 @@
         CGFloat middleH = self.height * middleW / self.width;
         if (middleH >= ScreenH) {//处理图片过长的情况。
             middleH = 201;
+            self.bigPic = YES;
         }
         _cellHeight += middleH;
         _cellHeight += Marin;

@@ -156,19 +156,19 @@
 -(void)layoutSubviews{
     [super layoutSubviews];
     
-    CGFloat middleY = 0;
-    CGFloat middleW = 0;
-    CGFloat middleH = 0;
-    CGSize maxSize = CGSizeMake(ScreenW - 4 * Marin, MAXFLOAT);
-    
-    if (self.topic.height && self.topic.width) {
-        middleY += Marin + 35 + Marin;
-        middleY += [self.text_label.text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:15]} context:nil].size.height;
-        middleY += Marin;
-        
-        middleW = ScreenW - 4 * Marin;
-        middleH = self.topic.height * middleW / self.topic.width;
-    }
+//    CGFloat middleY = 0;
+//    CGFloat middleW = 0;
+//    CGFloat middleH = 0;
+//    CGSize maxSize = CGSizeMake(ScreenW - 4 * Marin, MAXFLOAT);
+//    
+//    if (self.topic.height && self.topic.width) {
+//        middleY += Marin + 35 + Marin;
+//        middleY += [self.text_label.text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:15]} context:nil].size.height;
+//        middleY += Marin;
+//        
+//        middleW = ScreenW - 4 * Marin;
+//        middleH = self.topic.height * middleW / self.topic.width;
+//    }
     
     if (self.topic.type == SLBSTopicTypeVideo){//视频
         self.videoView.frame = self.topic.middleRect;

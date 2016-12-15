@@ -19,14 +19,14 @@
     
     //判断是否下载过大图
     //从硬盘缓存取----->默认会先从内存缓存取   key就是url
-    UIImage * bigImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:originURL];
+    UIImage * bigImage = nil;
+    if(![originURL.lowercaseString hasSuffix:@"gif"]) bigImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:originURL];
     
     if (bigImage) {/*下载过*/
         self.image = bigImage;
     }else{
         if (manager.isReachableViaWiFi) {//wifi状态
             [self sd_setImageWithURL:[NSURL URLWithString:originURL] placeholderImage:placeholder completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                SLog(@"%@",image);
                 if (block && image != NULL) {
                     block();
                 }
