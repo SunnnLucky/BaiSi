@@ -7,6 +7,8 @@
 //
 
 #import "SLBSTopicPictureView.h"
+#import "SLBSSeeBigPicVC.h"
+
 #import "UIImageView+Download.h"
 #import "AFNetworking.h"
 #import "UIImageView+WebCache.h"
@@ -25,16 +27,9 @@
 -(void)setItem:(SLBSEssenceItem *)item{
     _item = item;
     
-    [self.image setOriginImage:item.image1 thumbnail:item.image0 placeholder:nil completed:nil];
-    
-    //gif   lowercaseString是转成小写 hasSuffix
-    self.gif.hidden = !item.is_gif;
-    //点击显示大图
-    if(item.isBigPic){
-        self.moreButton.hidden = NO;
-        self.image.contentMode = UIViewContentModeTop;
+    [self.image setOriginImage:item.image1 thumbnail:item.image0 placeholder:nil completed:^{
         //处理图片过大时，等比例缩放图片
-        if(self.image.image){
+        if(item.isBigPic){
             CGFloat imageW = item.middleRect.size.width;
             CGFloat imageH = imageW * item.height / item.width;
             UIGraphicsBeginImageContext(CGSizeMake(imageW, imageH));
@@ -42,6 +37,15 @@
             self.image.image = UIGraphicsGetImageFromCurrentImageContext();
             UIGraphicsEndImageContext();
         }
+    }];
+    
+    //gif   lowercaseString是转成小写 hasSuffix
+    self.gif.hidden = !item.is_gif;
+    //点击显示大图
+    if(item.isBigPic){
+        self.moreButton.hidden = NO;
+        self.image.contentMode = UIViewContentModeTop;
+        
         self.image.clipsToBounds = YES;
     }else{
         self.moreButton.hidden = YES;
@@ -57,6 +61,15 @@
     self.autoresizingMask = UIViewAutoresizingNone;
     self.moreButton.hidden = YES;
     self.gif.hidden = YES;
+    
+    self.image.userInteractionEnabled = YES;
+    [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(seeBigPic)]];
+}
+
+-(void)seeBigPic{
+    SLBSSeeBigPicVC * bigPic = [[SLBSSeeBigPicVC alloc] init];
+    bigPic.item = self.item;
+    [self.window.rootViewController presentViewController:bigPic animated:YES completion:nil];
 }
 
 @end

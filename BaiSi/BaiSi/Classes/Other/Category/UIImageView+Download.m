@@ -11,6 +11,8 @@
 #import "UIImage+image.h"
 #import "AFNetworking.h"
 
+#import "SLBSSeeBigPicVC.h"
+
 @implementation UIImageView (Download)
 
 -(void)setOriginImage:(NSString *)originURL thumbnail:(NSString *)thumbnailURL placeholder:(UIImage *)placeholder completed:(completedBlock)block{
@@ -67,5 +69,8 @@
         self.image = [image circleImage];
     }];
 }
+
+
+
 
 @end

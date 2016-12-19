@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class SLBSEssenceItem;
 @interface UIImageView (Download)
 
 typedef void (^completedBlock)();

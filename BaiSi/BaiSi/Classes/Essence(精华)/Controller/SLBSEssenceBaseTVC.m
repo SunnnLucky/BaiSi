@@ -232,6 +232,7 @@ static NSString * const CellID = @"SLBSTopicCell";
     [self dealHeader];
     //====上拉加载====
     [self dealFooter];
+    [[SDImageCache sharedImageCache] clearMemory];
 }
 
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
@@ -403,8 +404,6 @@ static NSString * const CellID = @"SLBSTopicCell";
         
         [self footerEndRefreshing];
     }];
-    
-    [[SDImageCache sharedImageCache] setValue:nil forKey:@"memCache"];
 }
 
 -(void)didReceiveMemoryWarning{

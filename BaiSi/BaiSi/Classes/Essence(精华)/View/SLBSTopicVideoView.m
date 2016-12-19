@@ -7,6 +7,8 @@
 //
 
 #import "SLBSTopicVideoView.h"
+#import "SLBSSeeBigPicVC.h"
+
 #import "UIImageView+WebCache.h"
 #import "UIImageView+Download.h"
 
@@ -44,6 +46,15 @@
     self.autoresizingMask = UIViewAutoresizingNone;
     self.playCount.backgroundColor = [UIColor colorWithRed:104 / 255.0 green:104 / 255.0 blue:104 / 255.0 alpha:1];
     self.videoTime.backgroundColor = [UIColor colorWithRed:104 / 255.0 green:104 / 255.0 blue:104 / 255.0 alpha:1];
+    
+    self.image.userInteractionEnabled = YES;
+    [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(seeBigPic)]];
+}
+
+-(void)seeBigPic{
+    SLBSSeeBigPicVC * bigPic = [[SLBSSeeBigPicVC alloc] init];
+    bigPic.item = self.item;
+    [self.window.rootViewController presentViewController:bigPic animated:YES completion:nil];
 }
 
 @end

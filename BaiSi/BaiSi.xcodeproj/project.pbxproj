@@ -75,6 +75,8 @@
 		71E7DBEA1DE4325F00319FC0 /* SLBSWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E7DBE81DE4325F00319FC0 /* SLBSWebViewVC.m */; };
 		71E7DBEB1DE4325F00319FC0 /* SLBSWebViewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E7DBE91DE4325F00319FC0 /* SLBSWebViewVC.xib */; };
 		71E7DBED1DE439B400319FC0 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71E7DBEC1DE439B400319FC0 /* WebKit.framework */; };
+		71F113A51E07A8A2004F366F /* SLBSSeeBigPicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F113A31E07A8A2004F366F /* SLBSSeeBigPicVC.m */; };
+		71F113A61E07A8A2004F366F /* SLBSSeeBigPicVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F113A41E07A8A2004F366F /* SLBSSeeBigPicVC.xib */; };
 		71F8D3E31DF7D91600DB9CF6 /* SLBSTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F8D3E21DF7D91600DB9CF6 /* SLBSTopicCell.m */; };
 /* End PBXBuildFile section */
 
@@ -193,6 +195,9 @@
 		71E7DBE81DE4325F00319FC0 /* SLBSWebViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSWebViewVC.m; sourceTree = "<group>"; };
 		71E7DBE91DE4325F00319FC0 /* SLBSWebViewVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SLBSWebViewVC.xib; sourceTree = "<group>"; };
 		71E7DBEC1DE439B400319FC0 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		71F113A21E07A8A2004F366F /* SLBSSeeBigPicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSSeeBigPicVC.h; sourceTree = "<group>"; };
+		71F113A31E07A8A2004F366F /* SLBSSeeBigPicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSSeeBigPicVC.m; sourceTree = "<group>"; };
+		71F113A41E07A8A2004F366F /* SLBSSeeBigPicVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SLBSSeeBigPicVC.xib; sourceTree = "<group>"; };
 		71F8D3E11DF7D91600DB9CF6 /* SLBSTopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBSTopicCell.h; sourceTree = "<group>"; };
 		71F8D3E21DF7D91600DB9CF6 /* SLBSTopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBSTopicCell.m; sourceTree = "<group>"; wrapsLines = 1; };
 		9CD6F6789163AC61618F5367 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -609,6 +614,7 @@
 			children = (
 				71F8D3E11DF7D91600DB9CF6 /* SLBSTopicCell.h */,
 				71F8D3E21DF7D91600DB9CF6 /* SLBSTopicCell.m */,
+				719520D71DF91057009F60B6 /* SLBSTopicCell.xib */,
 				714054BD1DFE6C3100EEC731 /* SLBSTopicVideoView.h */,
 				714054BE1DFE6C3100EEC731 /* SLBSTopicVideoView.m */,
 				714054C01DFE6C3A00EEC731 /* SLBSTopicVideoView.xib */,
@@ -618,7 +624,9 @@
 				714054C51DFEB99000EEC731 /* SLBSTopicVoiceView.h */,
 				714054C61DFEB99000EEC731 /* SLBSTopicVoiceView.m */,
 				714054CA1DFEB9BB00EEC731 /* SLBSTopicVoiceView.xib */,
-				719520D71DF91057009F60B6 /* SLBSTopicCell.xib */,
+				71F113A21E07A8A2004F366F /* SLBSSeeBigPicVC.h */,
+				71F113A31E07A8A2004F366F /* SLBSSeeBigPicVC.m */,
+				71F113A41E07A8A2004F366F /* SLBSSeeBigPicVC.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -836,6 +844,7 @@
 				7160DEB31DDB277A00413E11 /* SLBSAdVC.xib in Resources */,
 				717FCF411DE040D6009CE804 /* SLBSLoginVC.xib in Resources */,
 				717FCF5A1DE2F238009CE804 /* SLBSMeTVC.storyboard in Resources */,
+				71F113A61E07A8A2004F366F /* SLBSSeeBigPicVC.xib in Resources */,
 				7160DEC21DDB2C0E00413E11 /* LaunchImage@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -931,6 +940,7 @@
 				71301A021DDC2E5200E9E10E /* SLBSAdItem.m in Sources */,
 				717FCF451DE04F2C009CE804 /* SLBSLoginV.m in Sources */,
 				71E096111DEA9CD700FE1740 /* SLBSAllTVC.m in Sources */,
+				71F113A51E07A8A2004F366F /* SLBSSeeBigPicVC.m in Sources */,
 				712E6D6D1DED2560005A3CB6 /* SLBSEssenceBaseTVC.m in Sources */,
 				7115CF771DD4203B00891093 /* SLBSEssenceVC.m in Sources */,
 				7115CF631DD41D6E00891093 /* AppDelegate.m in Sources */,
