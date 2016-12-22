@@ -19,4 +19,8 @@
     [super viewDidLoad];
 }
 
+-(SLBSTopicType)type{
+    return SLBSTopicTypeAll;
+}
+
 @end

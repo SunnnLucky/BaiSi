@@ -7,7 +7,7 @@
 //
 
 #import "SLBSEssenceBaseTVC.h"
-#import "SLBSEssenceItem.h"
+
 #import "UIImageView+WebCache.h"
 #import "AFNetworking.h"
 #import "MJExtension.h"
@@ -245,13 +245,17 @@ static NSString * const CellID = @"SLBSTopicCell";
 }
 
 #pragma mark - 判断当前是哪个控制器
--(NSUInteger)judgeCurrentTVC{
-    if ([self isKindOfClass:NSClassFromString(@"SLBSAllTVC")]) return SLBSTopicTypeAll;
-    if ([self isKindOfClass:NSClassFromString(@"SLBSVideoTVC")]) return SLBSTopicTypeVideo;
-    if ([self isKindOfClass:NSClassFromString(@"SLBSVoiceTVC")]) return SLBSTopicTypeVoice;
-    if ([self isKindOfClass:NSClassFromString(@"SLBSPictureTVC")]) return SLBSTopicTypePicture;
-    if ([self isKindOfClass:NSClassFromString(@"SLBSWordTVC")]) return SLBSTopicTypeWord;
-    return 0;
+//-(NSUInteger)judgeCurrentTVC{
+//    //父类不应该包含子类的业务逻辑、应该暴露出一个get方法让子类返回
+//    if ([self isKindOfClass:NSClassFromString(@"SLBSAllTVC")]) return SLBSTopicTypeAll;
+//    if ([self isKindOfClass:NSClassFromString(@"SLBSVideoTVC")]) return SLBSTopicTypeVideo;
+//    if ([self isKindOfClass:NSClassFromString(@"SLBSVoiceTVC")]) return SLBSTopicTypeVoice;
+//    if ([self isKindOfClass:NSClassFromString(@"SLBSPictureTVC")]) return SLBSTopicTypePicture;
+//    if ([self isKindOfClass:NSClassFromString(@"SLBSWordTVC")]) return SLBSTopicTypeWord;
+//    return 0;
+//}
+-(SLBSTopicType)type{
+    return SLBSTopicTypeAll;
 }
 
 #pragma mark - header & footer 业务逻辑
@@ -352,7 +356,7 @@ static NSString * const CellID = @"SLBSTopicCell";
     NSMutableDictionary * parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
     parameters[@"c"] = @"data";
-    parameters[@"type"] = @([self judgeCurrentTVC]);
+    parameters[@"type"] = @(self.type);
     
     [self.manager GET:SLBSCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         self.maxtime = (NSString * )responseObject[@"info"][@"maxtime"];
@@ -384,7 +388,7 @@ static NSString * const CellID = @"SLBSTopicCell";
     parameters[@"a"] = @"list";
     parameters[@"c"] = @"data";
     parameters[@"maxtime"] = self.maxtime;
-    parameters[@"type"] = @([self judgeCurrentTVC]);
+    parameters[@"type"] = @(self.type);
     
     [self.manager GET:SLBSCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         self.maxtime = (NSString * )responseObject[@"info"][@"maxtime"];

@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "SLBSEssenceItem.h"
 @class SLBSEssenceItem;
 
 @interface SLBSEssenceBaseTVC : UITableViewController
 
 @property(nonatomic,strong)NSMutableArray<SLBSEssenceItem *> * array;
 
+-(SLBSTopicType)type;
 @end
